@@ -327,13 +327,8 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
 /* founders panels: the same treatment as the doors on the cover */
 .frames{gap:14px;padding-top:14px}
 .frames .scene{min-height:clamp(480px,78vh,760px)}
-/* one warm grade across every photograph, matched to the candlelit cover; per-image tuning via --sep --sat --b --bl */
+/* one warm grade across every photograph, matched to the candlelit cover; per-image tuning via --sep --sat --b */
 .frames .scene > img{filter:sepia(var(--sep,.22)) saturate(var(--sat,.85)) contrast(1.03) brightness(var(--b,.84)) blur(var(--bl,0px))}
-.frames .scene > img.soft{left:-2%;width:104%}
-/* tall or square photos shown whole: the photo at full height, feathered into a flat fill sampled from its own background */
-.frames .scene.fit{background:var(--fill,var(--night))}
-.frames .scene.fit > img:not(.fill){top:0;height:100%;width:auto;max-width:none;left:var(--x,50%);transform:translateX(-50%);-webkit-mask-image:linear-gradient(90deg,transparent,#000 16%,#000 84%,transparent);mask-image:linear-gradient(90deg,transparent,#000 16%,#000 84%,transparent)}
-@media (max-width:980px){.frames .scene.fit > img:not(.fill){width:100%;left:0;transform:none;object-fit:cover;-webkit-mask-image:none;mask-image:none}}
 .y-stage > img,.y-bg img{filter:sepia(.28) saturate(.8) contrast(1.03)}
 .p-hero img.bg{animation:focusg 2.6s var(--ease) both,drift 36s ease-in-out 2.6s infinite alternate}
 @keyframes focusg{from{filter:sepia(.22) saturate(.85) blur(16px) brightness(.5);transform:scale(1.16)}to{filter:sepia(.22) saturate(.85) blur(0) brightness(.92);transform:scale(1.06)}}
@@ -480,10 +475,10 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
   <section class="years" data-dark>
     <div class="stages">
       <div class="y-stage"><img src="img/street-1882.jpg" alt="An early street in Tel Aviv, lined with cypress trees"><div class="y-num">1882</div><p class="y-line">144 years of experience.</p></div>
-      <div class="y-stage"><img src="img/telaviv-waves.jpg" alt="Looking up through the wave-shaped white balconies of a new Tel Aviv building"><div class="y-num">2026</div><p class="y-line">144 years of experience.</p></div>
+      <div class="y-stage"><img src="img/telaviv-2026.jpg" alt="A sandstone apartment building with arched windows and curved balconies in Tel Aviv today"><div class="y-num">2026</div><p class="y-line">144 years of experience.</p></div>
     </div>
     <div class="y-sticky" aria-hidden="true">
-      <div class="y-bg"><img class="on" src="img/street-1882.jpg" alt="" style="object-position:50% 55%"><img src="img/telaviv-waves.jpg" alt="" style="object-position:50% 45%"></div>
+      <div class="y-bg"><img class="on" src="img/street-1882.jpg" alt="" style="object-position:50% 55%"><img src="img/telaviv-2026.jpg" alt="" style="object-position:50% 42%"></div>
       <div class="roller"></div>
       <div class="y-swap y-static"><p>144 years of experience.</p></div>
     </div>
@@ -492,7 +487,7 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
   <div class="frames">
   <section class="scene" data-dark>
     <span class="no">i</span>
-    <img src="img/wine-wall.jpg" alt="Wine bottles on stools against a sunlit wall, their shadows cast above them" data-parallax style="object-position:50% 66%;--sep:.3;--sat:.85;--b:.9">
+    <img src="img/threshold.jpg" alt="People climbing a sunlit stone staircase, seen through a doorway" data-parallax style="object-position:50% 60%;--b:.88">
     <div class="scene-copy wrap">
       <span class="eyebrow" data-fade>By invitation</span>
       <h2 data-split>Our heritage is rooted in backing <em>people with a vision.</em></h2>
@@ -500,9 +495,9 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
     </div>
   </section>
 
-  <section class="scene scene-offer fit" data-dark style="--fill:rgb(185,173,151)">
+  <section class="scene scene-offer" data-dark>
     <span class="no">ii</span>
-    <img src="img/heritage-cards.jpg" alt="Edmond de Rothschild heritage stationery: a portrait of the Baron, the crest, the Rothschild Legacy key card and the Lavaux estate" style="--x:40%;--sep:.2;--sat:.85;--b:.92">
+    <img src="img/piano-room.jpg" alt="A grand piano in a high-ceilinged salon with gilded cornices and an arched window" data-parallax style="object-position:50% 68%;--sep:.32;--b:.86">
     <div class="scene-copy wrap">
       <div class="so-left">
         <span class="eyebrow" data-fade>Our services</span>
@@ -540,7 +535,7 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
 
   <section class="scene" data-dark>
     <span class="no">iii</span>
-    <img class="soft" src="img/swiss-lake.jpg" alt="Two swimmers watching a Swiss lake steamer pass" data-parallax style="object-position:50% 62%;--sep:.45;--sat:.7;--b:.78;--bl:1px">
+    <img src="img/two-glasses.jpg" alt="Two glasses of amber spirit side by side on a sunlit stone ledge" data-parallax style="object-position:50% 54%;--sep:.15;--b:.9">
     <div class="scene-copy wrap">
       <span class="eyebrow" data-fade>Personal service</span>
       <h2 data-split>One team, who knows you <em>and your family.</em></h2>
