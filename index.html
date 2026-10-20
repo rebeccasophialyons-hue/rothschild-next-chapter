@@ -132,9 +132,9 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
 .doors{flex:1;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;min-height:0}
 .door{position:relative;overflow:hidden;background:var(--night);color:var(--cream);display:flex;align-items:flex-end;min-width:0;min-height:0}
 .door .ph{position:absolute;inset:0;overflow:hidden}
-.door img{width:100%;height:100%;object-fit:cover;filter:brightness(.8);transition:transform 1.6s var(--ease),filter 1s var(--ease)}
+.door img{width:100%;height:100%;object-fit:cover;filter:sepia(.2) saturate(.85) brightness(.8);transition:transform 1.6s var(--ease),filter 1s var(--ease)}
 .door::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,12,12,0) 45%,rgba(13,12,12,.75) 100%)}
-.door:hover img{transform:scale(1.06);filter:brightness(1)}
+.door:hover img{transform:scale(1.06);filter:sepia(.2) saturate(.85) brightness(1)}
 .door .name{position:relative;z-index:2;padding:0 28px 26px;font-family:var(--serif);font-size:clamp(20px,1.6vw,25px);line-height:1.15;letter-spacing:-.005em}
 .door .name span{background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .7s var(--ease);padding-bottom:3px}
 .door:hover .name span{background-size:100% 1px}
@@ -327,7 +327,12 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
 /* founders panels: the same treatment as the doors on the cover */
 .frames{gap:14px;padding-top:14px}
 .frames .scene{min-height:clamp(480px,78vh,760px)}
-.frames .scene > img{filter:brightness(.86)}
+/* one warm grade across every photograph, matched to the candlelit cover; per-image tuning via --sep --sat --b --bl */
+.frames .scene > img{filter:sepia(var(--sep,.22)) saturate(var(--sat,.85)) contrast(1.03) brightness(var(--b,.84)) blur(var(--bl,0px))}
+.frames .scene > img.soft{left:-2%;width:104%}
+.y-stage > img,.y-bg img{filter:sepia(.28) saturate(.8) contrast(1.03)}
+.p-hero img.bg{animation:focusg 2.6s var(--ease) both,drift 36s ease-in-out 2.6s infinite alternate}
+@keyframes focusg{from{filter:sepia(.22) saturate(.85) blur(16px) brightness(.5);transform:scale(1.16)}to{filter:sepia(.22) saturate(.85) blur(0) brightness(.92);transform:scale(1.06)}}
 .frames .scene::after{background:linear-gradient(180deg,rgba(13,12,12,0) 38%,rgba(13,12,12,.78) 100%),linear-gradient(90deg,rgba(13,12,12,.25) 0%,rgba(13,12,12,0) 45%)}
 .frames .scene-offer::after{background:linear-gradient(180deg,rgba(13,12,12,.1) 0%,rgba(13,12,12,.82) 100%),linear-gradient(90deg,rgba(13,12,12,.2) 0%,rgba(13,12,12,0) 40%,rgba(13,12,12,.45) 100%)}
 .frames .scene .no{position:absolute;z-index:3;top:26px;left:clamp(24px,4vw,56px);font-family:var(--serif);font-style:italic;font-size:22px;color:var(--cream-soft)}
@@ -483,7 +488,7 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
   <div class="frames">
   <section class="scene" data-dark>
     <span class="no">i</span>
-    <img src="img/threshold.jpg" alt="People climbing a sunlit stone staircase, seen through a doorway" data-parallax style="object-position:50% 58%">
+    <img src="img/grapes-blur.jpg" alt="Green grapes on the vine, softly blurred against a pale wall" data-parallax style="object-position:50% 55%;--sep:.55;--sat:.72;--b:.6">
     <div class="scene-copy wrap">
       <span class="eyebrow" data-fade>By invitation</span>
       <h2 data-split>Our heritage is rooted in backing <em>people with a vision.</em></h2>
@@ -493,7 +498,7 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
 
   <section class="scene scene-offer" data-dark>
     <span class="no">ii</span>
-    <img src="img/two-glasses.jpg" alt="Two glasses of amber spirit on a sunlit stone ledge" data-parallax style="object-position:50% 56%">
+    <img class="soft" src="img/library-lamps.jpg" alt="A private library of leather-bound books, lit by red-shaded lamps beneath a gilt portrait" data-parallax style="object-position:50% 30%;--sep:.18;--sat:.8;--b:.74;--bl:1.5px">
     <div class="scene-copy wrap">
       <div class="so-left">
         <span class="eyebrow" data-fade>Our services</span>
@@ -531,7 +536,7 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
 
   <section class="scene" data-dark>
     <span class="no">iii</span>
-    <img src="img/swiss-lake.jpg" alt="Two swimmers watching a Swiss lake steamer pass" data-parallax style="object-position:50% 62%">
+    <img class="soft" src="img/swiss-lake.jpg" alt="Two swimmers watching a Swiss lake steamer pass" data-parallax style="object-position:50% 62%;--sep:.45;--sat:.7;--b:.78;--bl:1px">
     <div class="scene-copy wrap">
       <span class="eyebrow" data-fade>Personal service</span>
       <h2 data-split>One team, who knows you <em>and your family.</em></h2>
@@ -704,7 +709,7 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
 
   <section class="scene" data-dark>
     <span class="no">iii</span>
-    <img src="img/ch-wine.jpg" alt="A wine bar beneath olive trees, lit by lanterns" data-parallax style="object-position:50% 62%;filter:brightness(.66)">
+    <img src="img/ch-wine.jpg" alt="A wine bar beneath olive trees, lit by lanterns" data-parallax style="object-position:50% 62%;--b:.62">
     <div class="scene-copy wrap">
       <span class="eyebrow" data-fade>Chapter III · Rothschild wine</span>
       <h2 data-split>Behind <em>the Label.</em></h2>
