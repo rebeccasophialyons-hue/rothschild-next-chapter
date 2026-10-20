@@ -330,9 +330,9 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
 /* one warm grade across every photograph, matched to the candlelit cover; per-image tuning via --sep --sat --b --bl */
 .frames .scene > img{filter:sepia(var(--sep,.22)) saturate(var(--sat,.85)) contrast(1.03) brightness(var(--b,.84)) blur(var(--bl,0px))}
 .frames .scene > img.soft{left:-2%;width:104%}
-/* tall or square photos shown whole: the photo at full height, a blurred copy of itself filling the rest of the frame */
+/* tall or square photos shown whole: the photo at full height, feathered into a flat fill sampled from its own background */
+.frames .scene.fit{background:var(--fill,var(--night))}
 .frames .scene.fit > img:not(.fill){top:0;height:100%;width:auto;max-width:none;left:var(--x,50%);transform:translateX(-50%);-webkit-mask-image:linear-gradient(90deg,transparent,#000 16%,#000 84%,transparent);mask-image:linear-gradient(90deg,transparent,#000 16%,#000 84%,transparent)}
-.frames .scene.fit > img.fill{left:-6%;width:112%}
 @media (max-width:980px){.frames .scene.fit > img:not(.fill){width:100%;left:0;transform:none;object-fit:cover;-webkit-mask-image:none;mask-image:none}}
 .y-stage > img,.y-bg img{filter:sepia(.28) saturate(.8) contrast(1.03)}
 .p-hero img.bg{animation:focusg 2.6s var(--ease) both,drift 36s ease-in-out 2.6s infinite alternate}
@@ -490,10 +490,9 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
   </section>
 
   <div class="frames">
-  <section class="scene fit" data-dark>
+  <section class="scene" data-dark>
     <span class="no">i</span>
-    <img class="fill" src="img/pour.jpg" alt="" aria-hidden="true" data-parallax style="--sep:.4;--sat:.9;--b:.7;--bl:28px">
-    <img src="img/pour.jpg" alt="A spirit poured over ice into a cut-crystal glass on travertine, in warm afternoon light" style="--x:70%;--sep:.4;--sat:.9;--b:.86">
+    <img src="img/wine-wall.jpg" alt="Wine bottles on stools against a sunlit wall, their shadows cast above them" data-parallax style="object-position:50% 66%;--sep:.3;--sat:.85;--b:.9">
     <div class="scene-copy wrap">
       <span class="eyebrow" data-fade>By invitation</span>
       <h2 data-split>Our heritage is rooted in backing <em>people with a vision.</em></h2>
@@ -501,9 +500,8 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
     </div>
   </section>
 
-  <section class="scene scene-offer fit" data-dark>
+  <section class="scene scene-offer fit" data-dark style="--fill:rgb(185,173,151)">
     <span class="no">ii</span>
-    <img class="fill" src="img/heritage-cards.jpg" alt="" aria-hidden="true" data-parallax style="--sep:.2;--sat:.85;--b:.8;--bl:28px">
     <img src="img/heritage-cards.jpg" alt="Edmond de Rothschild heritage stationery: a portrait of the Baron, the crest, the Rothschild Legacy key card and the Lavaux estate" style="--x:40%;--sep:.2;--sat:.85;--b:.92">
     <div class="scene-copy wrap">
       <div class="so-left">
