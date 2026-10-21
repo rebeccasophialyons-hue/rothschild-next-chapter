@@ -409,6 +409,15 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
 .c-return-ph{position:relative;overflow:hidden;aspect-ratio:4/5}
 .c-return-ph img{position:absolute;left:0;top:-8%;width:100%;height:116%;max-width:none;object-fit:cover}
 
+/* figures inside dark dropdowns, and the heritage list */
+.o-figs{display:flex;gap:28px;padding:0 0 22px}
+.o-figs b{display:block;font-family:var(--serif);font-weight:400;font-size:30px;line-height:1;color:var(--cream)}
+.o-figs span{display:block;margin-top:6px;font-size:13px;color:var(--cream-soft)}
+.assets{margin:0;border-top:1px solid rgba(241,239,234,.4)}
+.assets > div{padding:16px 0;border-bottom:1px solid rgba(241,239,234,.2)}
+.assets dt{font-family:var(--serif);font-size:clamp(22px,1.9vw,27px);line-height:1.15;color:var(--cream)}
+.assets dd{margin:4px 0 0;font-size:15px;color:var(--cream-soft)}
+
 @media (max-width:980px){
   .c-idea,.c-return{grid-template-columns:1fr}
   .c-idea-art{margin:8px auto 0;max-width:440px}
@@ -731,68 +740,63 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
   <section class="c-sec wrap c-idea">
     <div class="c-idea-copy">
       <span class="eyebrow" data-fade>01 · The idea</span>
-      <h2 data-split>Exclusive by design. <em>Open only by invitation.</em></h2>
-      <p class="c-body" data-fade>Founders who made their money quickly can buy almost anything. What they cannot buy is entry into the world that has always marked established wealth.</p>
-      <p class="c-body" data-fade>We open that world to a small, handpicked group: three private evenings built around art, fine watchmaking and wine, hosted by a banking family that has belonged to it for generations. Like the best private members' clubs, the value lies in who is invited, and who is not.</p>
+      <h2 data-split>A House they want to belong to. <em>By invitation only.</em></h2>
+      <p class="c-body" data-fade>A new generation of Israeli founders has created extraordinary wealth. We offer entry into a world of history money can't buy.</p>
+      <p class="c-body" data-fade>Inspired by the sense of belonging to a private members' club, we introduce a select circle of founders to Edmond de Rothschild through three intimate experiences, each true to our brand.</p>
     </div>
-    <figure class="c-idea-art"><img src="img/i-waves.jpg" alt="Looking up through the curved white balconies of a Tel Aviv courtyard"></figure>
+    <figure class="c-idea-art"><img src="img/i-party.jpg" alt="Guests gathered with champagne around a steel bar, seen from above"></figure>
   </section>
 
-  <!-- 02 the room: partners handpick the guests -->
-  <section class="c-sec wrap c-room">
-    <div class="c-head">
-      <span class="eyebrow" data-fade>02 · The room</span>
-      <h2 data-split>Our partners choose the guests. <em>We host them.</em></h2>
-      <p class="c-body" data-fade>Hampton and The Founders Club are private communities of vetted founders. For each evening, they handpick 10 to 15 of their most accomplished members and send the invitation in their own name. We do not need to find the right people. Our partners already know them.</p>
-    </div>
-    <div class="pcards">
-      <div class="pcard">
-        <span class="eyebrow">Hampton</span>
-        <p>A private network for founders and CEOs who have built multimillion-dollar businesses, raised significant capital or sold a company. Members meet in small peer groups and at private dinners.</p>
-        <div class="pfig"><div><b data-count="1000" data-suffix="+">1,000+</b><span>members</span></div><div><b data-count="18">18</b><span>cities, incl. London and New York</span></div></div>
-      </div>
-      <div class="pcard">
-        <span class="eyebrow">The Founders Club</span>
-        <p>A community of entrepreneurs co-founded by Aaron Spivak. Brands including Mercury and Klaviyo already partner with the Club to reach its members.</p>
-        <div class="pfig"><div><b data-count="1700" data-suffix="+">1,700+</b><span>members</span></div><div><b data-count="20" data-prefix="$" data-suffix="bn+">$20bn+</b><span>combined annual revenue</span></div></div>
-      </div>
-    </div>
-    <ol class="c-steps" data-stagger>
-      <li><span>01</span><b>Our partners select</b><p>10 to 15 founders per evening, invited in the partner's name</p></li>
-      <li><span>02</span><b>We host</b><p>Three private evenings across the season</p></li>
-      <li><span>03</span><b>Our bankers follow up</b><p>The same senior team, in person, after every evening</p></li>
-    </ol>
-  </section>
-
-  <!-- 03 what we bring: framed wallpaper -->
   <div class="frames">
+  <!-- 02 the room: framed wallpaper -->
+  <section class="scene scene-offer c-room" data-dark>
+    <span class="no">ii</span>
+    <img src="img/i-waves.jpg" alt="Looking up through the curved white balconies of a Tel Aviv courtyard" data-parallax style="object-position:50% 55%;--sep:.02;--b:.9">
+    <div class="scene-copy wrap">
+      <div class="so-left">
+        <span class="eyebrow" data-fade>02 · The room</span>
+        <h2 data-split>Our partners choose the guests. <em>We host them.</em></h2>
+        <p data-fade>Two private founder networks handpick 10 to 15 of their most accomplished members for each evening.</p>
+      </div>
+      <div class="offer offer-dark">
+        <div class="o-item open">
+          <button class="o-btn" type="button" aria-expanded="true"><span class="o-t">How it works</span><span class="o-pm" aria-hidden="true"></span></button>
+          <div class="o-body"><div><ul class="o-list">
+            <li><b>Our partners select</b><span>10 to 15 founders per evening</span></li>
+            <li><b>We host</b><span>Three chapters, three events</span></li>
+            <li><b>Our bankers follow up</b><span>The same banker, in person, after every evening</span></li>
+          </ul></div></div>
+        </div>
+        <div class="o-item">
+          <button class="o-btn" type="button" aria-expanded="false"><span class="o-t">Hampton</span><span class="o-pm" aria-hidden="true"></span></button>
+          <div class="o-body"><div><p class="o-lead">A private network for founders and CEOs who have built multimillion-dollar businesses, raised significant capital or sold a company. Members meet in small peer groups and at private dinners.</p>
+            <div class="o-figs"><div><b>1,000+</b><span>members</span></div><div><b>18</b><span>cities, incl. London and New York</span></div></div></div></div>
+        </div>
+        <div class="o-item">
+          <button class="o-btn" type="button" aria-expanded="false"><span class="o-t">The Founders Club</span><span class="o-pm" aria-hidden="true"></span></button>
+          <div class="o-body"><div><p class="o-lead">A community of entrepreneurs co-founded by Aaron Spivak. Brands including Mercury and Klaviyo already partner with the Club to reach its members.</p>
+            <div class="o-figs"><div><b>1,700+</b><span>members</span></div><div><b>$20bn+</b><span>combined annual revenue</span></div></div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 what we bring: framed wallpaper, a simple list -->
   <section class="scene scene-offer c-bring" data-dark>
     <span class="no">iii</span>
-    <img src="img/m-tuscany.jpg" alt="Cypress trees and golden fields beneath a mountain at sunset" data-parallax style="object-position:50% 45%;--sep:.02;--b:.92">
+    <img src="img/i-busts2.jpg" alt="Two classical busts on marble plinths in a sunlit green room" data-parallax style="object-position:50% 40%;--sep:.02;--b:.95">
     <div class="scene-copy wrap">
       <div class="so-left">
         <span class="eyebrow" data-fade>03 · What we bring</span>
         <h2 data-split>Access only a heritage house <em>can offer.</em></h2>
-        <p data-fade>A new bank can offer a product. Edmond de Rothschild can open the doors of its own estates, cellars and collections.</p>
+        <p data-fade>A new bank can offer a product. We open the doors of our own world.</p>
       </div>
-      <div class="offer offer-dark">
-        <div class="o-item open">
-          <button class="o-btn" type="button" aria-expanded="true"><span class="o-t">Our vineyards</span><span class="o-pm" aria-hidden="true"></span></button>
-          <div class="o-body"><div><p class="o-lead">The family's wine estates, including Château Clarke in Bordeaux, with private tastings led by the winemakers themselves.</p></div></div>
-        </div>
-        <div class="o-item">
-          <button class="o-btn" type="button" aria-expanded="false"><span class="o-t">The wine cellar</span><span class="o-pm" aria-hidden="true"></span></button>
-          <div class="o-body"><div><p class="o-lead">Rare vintages from the Edmond de Rothschild portfolio, opened for guests and explained by those who made them.</p></div></div>
-        </div>
-        <div class="o-item">
-          <button class="o-btn" type="button" aria-expanded="false"><span class="o-t">The art gallery</span><span class="o-pm" aria-hidden="true"></span></button>
-          <div class="o-body"><div><p class="o-lead">The Edmond de Rothschild Center in Tel Aviv, opened after hours with its curators and the artists they champion.</p></div></div>
-        </div>
-        <div class="o-item">
-          <button class="o-btn" type="button" aria-expanded="false"><span class="o-t">Hotels and estates</span><span class="o-pm" aria-hidden="true"></span></button>
-          <div class="o-body"><div><p class="o-lead">The Group's hotels and private estates, available to guests for future stays and experiences.</p></div></div>
-        </div>
-      </div>
+      <dl class="assets" data-stagger>
+        <div><dt>Vineyards</dt><dd>Château Clarke, Bordeaux</dd></div>
+        <div><dt>The wine cellar</dt><dd>Rare vintages from the family portfolio</dd></div>
+        <div><dt>The art gallery</dt><dd>The Edmond de Rothschild Center, Tel Aviv</dd></div>
+        <div><dt>Hotels and estates</dt><dd>The Group's private properties</dd></div>
+      </dl>
     </div>
   </section>
   </div>
@@ -803,29 +807,18 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
       <span class="eyebrow" data-fade>04 · The commercial case</span>
       <h2 data-split>A direct route to a <em>hard-to-reach market.</em></h2>
       <div class="c-figs-row" data-stagger>
-        <div><b>30–45</b><span>handpicked founders across the series</span></div>
-        <div><b>3</b><span>private evenings</span></div>
+        <div><b>30–45</b><span>handpicked founders</span></div>
+        <div><b>3</b><span>private events</span></div>
         <div><b>2</b><span>partner networks</span></div>
-        <div><b>1</b><span>dedicated banking team</span></div>
+        <div><b>1</b><span>dedicated banker</span></div>
       </div>
       <dl class="returns" data-stagger>
-        <div><dt>For Edmond de Rothschild</dt><dd>A qualified pipeline of founders, introduced through trusted channels and engaged before their liquidity event.</dd></div>
-        <div><dt>For our partners</dt><dd>A member benefit no other sponsor can offer, from a name that carries weight.</dd></div>
-        <div><dt>For the guests</dt><dd>Entry to a world money alone cannot buy, and a trusted house, met on their own terms.</dd></div>
+        <div><dt>For Edmond de Rothschild</dt><dd>A qualified pipeline, engaged before liquidity.</dd></div>
+        <div><dt>For our partners</dt><dd>A member benefit no one else can offer.</dd></div>
+        <div><dt>For the guests</dt><dd>A world money can't buy.</dd></div>
       </dl>
-      <div class="offer offer-light">
-        <div class="o-item">
-          <button class="o-btn" type="button" aria-expanded="false"><span class="o-t">How we will measure it</span><span class="o-pm" aria-hidden="true"></span></button>
-          <div class="o-body"><div><ul class="o-list">
-            <li><b>Attendance</b><span>Qualified founders hosted across the three evenings.</span></li>
-            <li><b>Engagement</b><span>Private follow-up meetings requested by guests.</span></li>
-            <li><b>Conversion</b><span>New client relationships opened.</span></li>
-            <li><b>Referrals</b><span>Guests who introduce the next founder.</span></li>
-          </ul></div></div>
-        </div>
-      </div>
     </div>
-    <div class="c-return-ph"><img src="img/i-chair.jpg" alt="A brushed-steel chair holding a single steel cup, in a shaft of sunlight" data-parallax></div>
+    <div class="c-return-ph"><img src="img/i-chair2.jpg" alt="A brushed-steel chair holding a single steel cup, in a shaft of sunlight" data-parallax></div>
   </section>
 
   <a class="next wrap" href="#chapters">
