@@ -441,17 +441,16 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
   .mstep span{font-size:14px}
 }
 
-/* chapters opening: three panels, one per chapter */
-.ch-hero .tri{position:absolute;inset:0;display:grid;grid-template-columns:repeat(3,1fr);gap:3px;background:var(--night)}
-.ch-hero .tri figure{position:relative;margin:0;overflow:hidden}
-.ch-hero .tri img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.04);transition:transform 1.6s var(--ease),filter 1s var(--ease);filter:brightness(.92)}
-.ch-hero .tri figure:hover img{transform:scale(1.08);filter:brightness(1)}
-.motion .ch-hero .tri figure{clip-path:inset(100% 0 0 0);animation:triIn 1.4s var(--ease-io) both;animation-delay:calc(.15s + var(--i) * .16s)}
-@keyframes triIn{to{clip-path:inset(0 0 0 0)}}
-.ch-hero::after{background:linear-gradient(0deg,rgba(11,10,10,.82) 0%,rgba(11,10,10,.45) 30%,rgba(11,10,10,0) 58%),linear-gradient(180deg,rgba(11,10,10,.45) 0%,rgba(11,10,10,0) 16%)}
+/* chapters opening: heading above three framed doors, like the cover */
+.ch-head{display:grid;grid-template-columns:1fr minmax(0,420px);gap:40px;align-items:end;padding:0 4px clamp(18px,2.4vw,30px)}
+.ch-head .eyebrow{margin-bottom:14px}
+.ch-head h1{font-size:clamp(34px,4vw,60px);line-height:1.02}
+.ch-sub{color:var(--ink-soft);font-size:16px;line-height:1.55}
+button.door{padding:0;text-align:left;cursor:pointer}
 @media (max-width:980px){
-  .ch-hero .tri{grid-template-columns:1fr;grid-template-rows:repeat(3,1fr)}
-  .ch-hero::after{background:linear-gradient(0deg,rgba(11,10,10,.9) 0%,rgba(11,10,10,.55) 35%,rgba(11,10,10,0) 60%)}
+  .ch-head{grid-template-columns:1fr;gap:12px}
+  .ch-open{height:auto;min-height:100svh}
+  .ch-open .doors{min-height:150svh}
 }
 
 /* enquiry */
@@ -877,22 +876,19 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
 
 <!-- ================= THE CHAPTERS ================= -->
 <main class="view" data-view="chapters" hidden>
-  <section class="hero ch-hero" data-dark>
-    <div class="tri" aria-hidden="false">
-      <figure style="--i:0"><img src="img/ch-hero-table.jpg" alt="A candlelit table laid with crystal and linen" style="object-position:50% 55%"></figure>
-      <figure style="--i:1"><img src="img/ch-hero-gallery.jpg" alt="A salon wall hung with modern paintings above green panelling" style="object-position:50% 40%"></figure>
-      <figure style="--i:2"><img src="img/ch-hero-watch.jpg" alt="A wristwatch caught in motion" style="object-position:40% 50%"></figure>
-    </div>
-    <div class="hero-copy">
-      <div class="wrap">
-        <div class="txt">
-          <span class="eyebrow" data-fade data-now style="--d:700ms">The chapters</span>
-          <h1 data-split data-now>Three invitations <em>into our world.</em></h1>
-          <p class="sub" data-fade data-now style="--d:1100ms">Art, time and wine. Three evenings in Israel, each one opening a different door into the world of Edmond de Rothschild.</p>
-        </div>
+  <section class="choose ch-open">
+    <div class="ch-head">
+      <div>
+        <span class="eyebrow" data-fade data-now style="--d:200ms">The chapters</span>
+        <h1 data-split data-now>Three invitations <em>into our world.</em></h1>
       </div>
+      <p class="ch-sub" data-fade data-now style="--d:700ms">Art, time and wine. Three evenings in Israel, each one opening a different door into the world of Edmond de Rothschild.</p>
     </div>
-    <div class="cue" aria-hidden="true"></div>
+    <nav class="doors" aria-label="The three chapters">
+      <button type="button" class="door" data-jump="0" style="--i:0"><div class="ph"><img src="img/ch-hero-table.jpg" alt="" style="object-position:40% 55%"></div><span class="no">i</span><span class="name"><span>The Founders' Table</span></span></button>
+      <button type="button" class="door" data-jump="1" style="--i:1"><div class="ph"><img src="img/ch-hero-watch.jpg" alt="" style="object-position:55% 45%"></div><span class="no">ii</span><span class="name"><span>The Art of Time</span></span></button>
+      <button type="button" class="door" data-jump="2" style="--i:2"><div class="ph"><img src="img/wine-wall.jpg" alt="" style="object-position:50% 70%"></div><span class="no">iii</span><span class="name"><span>Behind the Label</span></span></button>
+    </nav>
   </section>
 
   <div class="frames">
@@ -1129,6 +1125,14 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
   $$('.mstep').forEach(function(b){
     function show(){ $$('.mstep').forEach(function(x){ x.classList.toggle('on', x === b); }); mdesc.textContent = b.dataset.d; }
     b.addEventListener('mouseenter', show); b.addEventListener('focus', show); b.addEventListener('click', show);
+  });
+
+  /* ---------- chapters: each door scrolls to its chapter ---------- */
+  $$('[data-jump]').forEach(function(b){
+    b.addEventListener('click', function(){
+      var t = document.querySelectorAll('[data-view="chapters"] .frames .scene')[+b.dataset.jump];
+      if (t) window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 14, behavior: reduce ? 'auto' : 'smooth' });
+    });
   });
 
   /* ---------- enquiry form (a preview: nothing is sent from the proposal) ---------- */
