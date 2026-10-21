@@ -352,91 +352,76 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
 .next{color:var(--ink)}
 
 /* ================= CONCEPT (pitch layout) ================= */
-.c-hero{display:grid;grid-template-columns:1fr 1fr;min-height:100vh;min-height:100svh;background:#151813;color:var(--cream)}
-.c-hero-copy{display:flex;flex-direction:column;justify-content:flex-end;padding:calc(130px + env(safe-area-inset-top,0px)) clamp(28px,5vw,80px) clamp(40px,5vw,72px) max(28px,env(safe-area-inset-left,0px))}
-.c-hero-copy .eyebrow{color:var(--cream-soft);margin-bottom:22px}
-.c-hero h1{font-size:clamp(38px,4.4vw,68px);line-height:1.02;max-width:600px}
-.c-hero-sub{margin-top:24px;max-width:480px;color:var(--cream-soft);font-size:17px;line-height:1.6}
-.c-index{list-style:none;margin:clamp(40px,6vw,80px) 0 0;padding:0;border-top:1px solid var(--rule-dark);max-width:480px}
-.c-index li{border-bottom:1px solid var(--rule-dark)}
-.c-index button{width:100%;display:flex;gap:18px;padding:11px 0;text-align:left;transition:color .4s,padding .5s var(--ease);font-size:var(--t-label);letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:var(--cream-soft)}
-.c-index button:hover{color:var(--cream);padding-left:8px}
-.c-index span{font-family:var(--serif);font-style:italic;letter-spacing:0;text-transform:none;font-size:15px;color:var(--cream);width:22px}
-.c-hero-media{position:relative;overflow:hidden;margin:14px 14px 14px 0}
-.c-hero-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:sepia(.04) brightness(.95);animation:focus 2.6s var(--ease) both}
+.c-sec{padding-block:clamp(64px,8vw,112px);border-top:1px solid var(--rule)}
+.c-sec h2,.c-hero h1{font-size:clamp(32px,3.4vw,52px);line-height:1.04}
+.c-head h2{margin-top:20px;max-width:760px}
+.c-body{margin-top:20px;max-width:540px;color:var(--ink-soft);font-size:17px;line-height:1.6}
 
-.c-split{display:grid;grid-template-columns:5fr 6fr;gap:clamp(40px,7vw,120px);align-items:start}
-.c-split-head h2{margin-top:22px;font-size:clamp(34px,3.8vw,58px);line-height:1.04}
-.c-big{font-family:var(--serif);font-size:clamp(22px,1.9vw,28px);line-height:1.3;letter-spacing:-.01em}
-.c-split-body .c-big{margin-top:6px}
+.c-hero{display:grid;grid-template-columns:6fr 5fr;gap:clamp(32px,5vw,80px);align-items:end;padding-top:calc(118px + env(safe-area-inset-top,0px));padding-bottom:clamp(56px,7vw,96px)}
+.c-hero-copy .eyebrow{margin-bottom:22px}
+.c-hero h1{font-size:clamp(38px,4.6vw,72px);max-width:640px}
+.c-hero-sub{margin-top:22px;max-width:500px;color:var(--ink-soft);font-size:17px;line-height:1.6}
+.c-index{list-style:none;margin:clamp(32px,4vw,52px) 0 0;padding:0;border-top:1px solid var(--rule);max-width:500px}
+.c-index li{border-bottom:1px solid var(--rule)}
+.c-index button{width:100%;display:flex;gap:18px;padding:11px 0;text-align:left;font-size:var(--t-label);letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:var(--ink-soft);transition:color .4s,padding .5s var(--ease)}
+.c-index button:hover{color:var(--ink);padding-left:8px}
+.c-index span{font-family:var(--serif);font-style:italic;letter-spacing:0;text-transform:none;font-size:15px;color:var(--ink);width:22px}
+.c-hero-media{position:relative;overflow:hidden;aspect-ratio:4/5;max-height:68vh;justify-self:end;width:100%}
+.c-hero-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;animation:focus 2.6s var(--ease) both}
 
-/* reveals on ivory */
-.offer-light{margin-top:clamp(32px,4vw,48px);border-top:1px solid var(--ink)}
-.offer-light .o-btn,.mdl .o-btn{grid-template-columns:1fr 24px;gap:16px;padding:20px 0}
-.offer-light .o-t{font-size:clamp(22px,1.9vw,28px)}
-.offer-light .o-pm{width:16px;height:16px}
-.offer-light .o-list b{color:var(--ink)}
-.offer-light .o-list span{color:var(--ink-soft)}
-.o-para{padding:0 0 24px;color:var(--ink-soft);font-size:16px;line-height:1.55;max-width:560px}
+.c-why{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,96px);align-items:start}
+.c-why h2{margin-top:20px}
+.c-approach.contrast{border-top:0}
+.c-approach .rows{margin-top:clamp(28px,3vw,40px)}
+.c-approach .row{grid-template-columns:1fr 1.2fr;gap:20px;padding:16px 0}
+.c-approach .row .them{font-size:16px}
+.c-approach .row .us{font-size:clamp(20px,1.7vw,24px)}
 
-.c-approach h2{margin-top:22px}
+.offer-light{margin-top:clamp(28px,3vw,40px);border-top:1px solid var(--ink)}
+.offer-light .o-btn,.mdl .o-btn{grid-template-columns:1fr 24px;gap:16px;padding:18px 0}
+.offer-light .o-t{font-size:clamp(21px,1.7vw,25px)}
+.offer-light .o-pm,.mdl .o-pm{width:15px;height:15px}
+.offer-light .o-list b,.mdl .o-list b{color:var(--ink)}
+.offer-light .o-list span,.mdl .o-list span{color:var(--ink-soft)}
+.o-para{padding:0 0 22px;color:var(--ink-soft);font-size:16px;line-height:1.55;max-width:560px}
 
-.c-statement{align-items:center;justify-content:center;text-align:center}
-.c-statement::after{background:radial-gradient(ellipse at center,rgba(13,12,12,.55) 0%,rgba(13,12,12,.7) 100%)}
-.c-statement .wrap{padding-bottom:0;display:flex;flex-direction:column;align-items:center}
-.c-statement .eyebrow{color:var(--cream-soft);margin-bottom:24px}
-.c-statement h2{max-width:900px;font-size:clamp(36px,4.6vw,72px)}
-.c-statement p{margin-top:26px;max-width:520px;color:var(--cream-soft);font-size:17px;line-height:1.6}
-
-.c-model{background:#151813}
-.c-model h2{margin-top:22px;max-width:760px}
-.mdl{display:grid;grid-template-columns:repeat(3,1fr);margin-top:clamp(52px,6vw,88px);border-top:1px solid var(--rule-dark)}
-.mdl-col{padding:34px 34px 0 0;min-width:0}
-.mdl-col+.mdl-col{padding-left:34px;border-left:1px solid var(--rule-dark)}
-.mdl-n{font-family:var(--serif);font-style:italic;font-size:clamp(44px,4.4vw,68px);line-height:1;color:var(--cream-soft)}
-.mdl h3{margin-top:22px;font-size:clamp(26px,2.3vw,34px)}
-.mdl-col > p{margin-top:12px;color:var(--cream-soft);font-size:17px;line-height:1.55;min-height:4.7em}
-.mdl .o-item{margin-top:20px;border-top:1px solid var(--rule-dark);border-bottom:1px solid var(--rule-dark)}
-.mdl .o-t{font-family:var(--sans);font-size:var(--t-label);letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:var(--cream)}
-.mdl .o-pm{width:14px;height:14px}
-.mdl .o-pm::before,.mdl .o-pm::after{background:var(--cream)}
+.mdl{display:grid;grid-template-columns:repeat(3,1fr);margin-top:clamp(36px,4vw,56px);border-top:1px solid var(--ink)}
+.mdl-col{padding:28px 30px 0 0;min-width:0}
+.mdl-col+.mdl-col{padding-left:30px;border-left:1px solid var(--rule)}
+.mdl-n{font-family:var(--serif);font-style:italic;font-size:clamp(34px,3vw,46px);line-height:1;color:var(--brass)}
+.mdl h3{margin-top:16px;font-size:clamp(23px,2vw,29px)}
+.mdl-col > p{margin-top:10px;color:var(--ink-soft);font-size:16px;line-height:1.55;min-height:4.7em}
+.mdl .o-item{margin-top:14px;border-top:1px solid var(--rule);border-bottom:0}
+.mdl .o-t{font-family:var(--sans);font-size:var(--t-label);letter-spacing:.14em;text-transform:uppercase;font-weight:500}
 .mdl .o-btn:hover .o-t{transform:none}
 
-.c-partners{display:grid;grid-template-columns:5fr 7fr;gap:clamp(40px,6vw,96px);align-items:center}
-.c-partners-ph{position:relative;overflow:hidden;aspect-ratio:4/5}
+.c-partners{display:grid;grid-template-columns:4fr 7fr;gap:clamp(40px,6vw,96px);align-items:center}
+.c-partners-ph{position:relative;overflow:hidden;aspect-ratio:4/5;max-height:72vh}
 .c-partners-ph img{position:absolute;left:0;top:-8%;width:100%;height:116%;max-width:none;object-fit:cover}
-.c-partners h2{margin-top:22px;font-size:clamp(34px,3.8vw,58px)}
-.c-partners .c-big{margin-top:24px;max-width:600px}
-.c-figs{display:grid;grid-template-columns:1fr 1fr;margin-top:clamp(36px,4vw,52px);border-top:1px solid var(--rule)}
-.c-figs > div{padding:22px 20px 22px 0;border-bottom:1px solid var(--rule);min-width:0}
-.c-figs > div:nth-child(even){padding-left:24px;border-left:1px solid var(--rule)}
-.c-figs .n{font-family:var(--serif);font-size:clamp(38px,3.6vw,56px);line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
-.c-figs p{margin-top:8px;color:var(--ink-soft);font-size:15px}
+.c-partners h2{margin-top:20px}
+.c-figs{display:grid;grid-template-columns:repeat(4,1fr);margin-top:clamp(28px,3vw,40px);border-top:1px solid var(--rule)}
+.c-figs > div{padding:18px 16px 18px 0;min-width:0}
+.c-figs > div+div{padding-left:16px;border-left:1px solid var(--rule)}
+.c-figs .n{font-family:var(--serif);font-size:clamp(30px,2.6vw,42px);line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums;white-space:nowrap}
+.c-figs p{margin-top:8px;color:var(--ink-soft);font-size:14px;line-height:1.4}
 
-.c-value .offer-head h2{font-size:clamp(34px,3.8vw,58px)}
-.c-measure{padding-block:0 clamp(96px,12vw,160px)}
-.c-measure h2{margin-top:22px;font-size:clamp(30px,3.2vw,48px)}
-.c-steps{list-style:none;margin:clamp(40px,5vw,64px) 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:0}
-.c-steps li{position:relative;padding:26px 24px 0 0;border-top:1px solid var(--ink);min-width:0}
-.c-steps li+li{padding-left:24px}
-.c-steps li+li::before{content:'';position:absolute;left:0;top:-5px;width:9px;height:9px;border-radius:50%;background:var(--ivory);border:1px solid var(--ink);transform:translateX(-50%)}
-.c-steps span{font-family:var(--serif);font-style:italic;color:var(--ink-soft);font-size:18px}
-.c-steps b{display:block;margin-top:10px;font-family:var(--serif);font-weight:400;font-size:clamp(24px,2.1vw,30px);line-height:1.1}
-.c-steps p{margin-top:8px;color:var(--ink-soft);font-size:16px;max-width:240px}
+.c-value .offer{margin-top:clamp(32px,4vw,52px)}
+.c-value .o-btn{padding:clamp(18px,2vw,26px) 0}
+.c-value .o-t{font-size:clamp(26px,2.6vw,38px)}
+.o-grid-4{grid-template-columns:repeat(4,1fr)}
 
 @media (max-width:980px){
-  .c-hero{grid-template-columns:1fr;min-height:0}
-  .c-hero-media{order:-1;height:56svh;margin:0}
-  .c-hero-copy{padding-top:40px}
-  .c-split,.c-partners{grid-template-columns:1fr}
+  .c-hero{grid-template-columns:1fr;padding-top:calc(88px + env(safe-area-inset-top,0px))}
+  .c-hero-media{order:-1;aspect-ratio:4/3;max-height:none}
+  .c-why,.c-partners{grid-template-columns:1fr}
   .c-partners-ph{aspect-ratio:4/3}
   .mdl{grid-template-columns:1fr}
-  .mdl-col,.mdl-col+.mdl-col{padding:30px 0;border-left:0;border-bottom:1px solid var(--rule-dark)}
+  .mdl-col,.mdl-col+.mdl-col{padding:24px 0;border-left:0;border-bottom:1px solid var(--rule)}
   .mdl-col > p{min-height:0}
-  .c-figs > div:nth-child(even){padding-left:16px}
-  .c-steps{grid-template-columns:1fr 1fr;row-gap:32px}
-  .c-steps li:nth-child(3){padding-left:0}
-  .c-steps li:nth-child(3)::before{display:none}
+  .c-figs{grid-template-columns:1fr 1fr}
+  .c-figs > div:nth-child(3){padding-left:0;border-left:0}
+  .c-figs > div:nth-child(n+3){border-top:1px solid var(--rule)}
+  .o-grid-4{grid-template-columns:1fr}
 }
 
 /* enquiry */
@@ -723,31 +708,28 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
 <!-- ================= THE CONCEPT ================= -->
 <main class="view" data-view="concept" hidden>
 
-  <!-- opening: split screen, not full-bleed -->
-  <section class="c-hero" data-dark>
+  <!-- opening: split, on ivory -->
+  <section class="c-hero wrap">
     <div class="c-hero-copy">
       <span class="eyebrow" data-fade data-now style="--d:300ms">The concept</span>
       <h1 data-split data-now>New wealth, <em>introduced to old money.</em></h1>
       <p class="c-hero-sub" data-fade data-now style="--d:900ms">A private, three-chapter event series that brings Israel's most successful founders into the world of art, ritual and taste, and makes Edmond de Rothschild the house that opened the door.</p>
       <ol class="c-index" data-fade data-now style="--d:1200ms">
-        <li><button type="button" data-to=".c-split"><span>01</span>The opportunity</button></li>
-        <li><button type="button" data-to=".c-approach"><span>02</span>The approach</button></li>
-        <li><button type="button" data-to=".c-model"><span>03</span>The model</button></li>
-        <li><button type="button" data-to=".c-partners"><span>04</span>The partners</button></li>
-        <li><button type="button" data-to=".c-value"><span>05</span>The value</button></li>
+        <li><button type="button" data-to=".c-why"><span>01</span>The opportunity</button></li>
+        <li><button type="button" data-to=".c-model"><span>02</span>The model</button></li>
+        <li><button type="button" data-to=".c-partners"><span>03</span>The partners</button></li>
+        <li><button type="button" data-to=".c-value"><span>04</span>The value</button></li>
       </ol>
     </div>
     <div class="c-hero-media"><img src="img/m-doorway.jpg" alt="A frescoed doorway opening onto rooms of old stone and timber"></div>
   </section>
 
-  <!-- 01 opportunity: two-column editorial, detail held in reveals -->
-  <section class="sec wrap c-split">
-    <div class="c-split-head">
+  <!-- 01: opportunity and approach, side by side -->
+  <section class="c-sec wrap c-why">
+    <div>
       <span class="eyebrow" data-fade>01 · The opportunity</span>
       <h2 data-split>They have the capital. <em>Not yet the circle.</em></h2>
-    </div>
-    <div class="c-split-body">
-      <p class="c-big" data-fade>A generation of Israeli founders has created significant wealth in a remarkably short time. Few have yet formed a lasting relationship with a heritage private bank. The first house to earn their trust is likely to keep it.</p>
+      <p class="c-body" data-fade>A generation of Israeli founders has created significant wealth in a remarkably short time. Few have yet formed a lasting relationship with a heritage private bank. The first house to earn their trust is likely to keep it.</p>
       <div class="offer offer-light">
         <div class="o-item">
           <button class="o-btn" type="button" aria-expanded="false"><span class="o-t">Why now</span><span class="o-pm" aria-hidden="true"></span></button>
@@ -761,92 +743,80 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
           <button class="o-btn" type="button" aria-expanded="false"><span class="o-t">What founders are missing</span><span class="o-pm" aria-hidden="true"></span></button>
           <div class="o-body"><div><ul class="o-list">
             <li><b>Entry, not access</b><span>Wealth buys access to almost anything. It does not buy a place in the world that has always signalled established wealth.</span></li>
-            <li><b>Cultural fluency</b><span>Art, collecting, fine watchmaking, wine: the codes of old money, learned from those who keep them.</span></li>
+            <li><b>Cultural fluency</b><span>Art, collecting, fine watchmaking and wine: the codes of old money, learned from those who keep them.</span></li>
             <li><b>A trusted counterpart</b><span>An adviser who understands both the business they built and the family they are building.</span></li>
+          </ul></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="contrast c-approach">
+      <span class="eyebrow" data-fade>The approach</span>
+      <h2 data-split>We don't pitch. <em>We host.</em></h2>
+      <div class="rows">
+        <div class="row"><span class="them">A cold introduction<i></i></span><span class="us">A personal invitation</span></div>
+        <div class="row"><span class="them">A product presentation<i></i></span><span class="us">A cultural experience</span></div>
+        <div class="row"><span class="them">A single meeting<i></i></span><span class="us">A series of three evenings</span></div>
+        <div class="row"><span class="them">A prospect list<i></i></span><span class="us">A relationship for generations</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02: model, three columns -->
+  <section class="c-sec wrap c-model">
+    <div class="c-head">
+      <span class="eyebrow" data-fade>02 · The model</span>
+      <h2 data-split>Three parties. <em>One room.</em></h2>
+    </div>
+    <div class="mdl" data-stagger>
+      <div class="mdl-col">
+        <span class="mdl-n">i</span>
+        <h3>Our partners bring the room</h3>
+        <p>Hampton and The Founders Club curate the guest list from their own members.</p>
+        <div class="o-item">
+          <button class="o-btn" type="button" aria-expanded="false"><span class="o-t">In detail</span><span class="o-pm" aria-hidden="true"></span></button>
+          <div class="o-body"><div><ul class="o-list">
+            <li><b>Vetted members only</b><span>Founders who have built, raised or exited</span></li>
+            <li><b>Invited by the partner</b><span>The invitation comes from a trusted network, not a bank</span></li>
+            <li><b>An intimate format</b><span>A small, curated group at each chapter</span></li>
+          </ul></div></div>
+        </div>
+      </div>
+      <div class="mdl-col">
+        <span class="mdl-n">ii</span>
+        <h3>We bring the world</h3>
+        <p>Edmond de Rothschild hosts: the venues, the experts and the access.</p>
+        <div class="o-item">
+          <button class="o-btn" type="button" aria-expanded="false"><span class="o-t">In detail</span><span class="o-pm" aria-hidden="true"></span></button>
+          <div class="o-body"><div><ul class="o-list">
+            <li><b>Three cultural chapters</b><span>Art, fine watchmaking and wine</span></li>
+            <li><b>The Group's own network</b><span>Venues, curators and specialists few others can convene</span></li>
+            <li><b>Hosts, not salespeople</b><span>No presentations. No products on the table.</span></li>
+          </ul></div></div>
+        </div>
+      </div>
+      <div class="mdl-col">
+        <span class="mdl-n">iii</span>
+        <h3>The relationship follows</h3>
+        <p>The same senior bankers attend all three chapters, and the conversation continues after.</p>
+        <div class="o-item">
+          <button class="o-btn" type="button" aria-expanded="false"><span class="o-t">In detail</span><span class="o-pm" aria-hidden="true"></span></button>
+          <div class="o-body"><div><ul class="o-list">
+            <li><b>Continuity</b><span>Familiar faces across the whole series</span></li>
+            <li><b>Personal follow-up</b><span>A private note and a one-to-one invitation after each chapter</span></li>
+            <li><b>An open door</b><span>A private banking conversation, when the guest is ready</span></li>
           </ul></div></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 02 approach: typographic contrast, no image -->
-  <section class="sec wrap contrast c-approach">
-    <span class="eyebrow" data-fade>02 · The approach</span>
-    <h2 data-split>We don't pitch. <em>We host.</em></h2>
-    <div class="rows">
-      <div class="row"><span class="them">A cold introduction<i></i></span><span class="us">A personal invitation</span></div>
-      <div class="row"><span class="them">A product presentation<i></i></span><span class="us">A cultural experience</span></div>
-      <div class="row"><span class="them">A single meeting<i></i></span><span class="us">A series of three evenings</span></div>
-      <div class="row"><span class="them">A prospect list<i></i></span><span class="us">A relationship for generations</span></div>
-    </div>
-  </section>
-
-  <!-- insight: full-bleed, centred statement -->
-  <section class="statement c-statement" data-dark>
-    <img src="img/m-gallery.jpg" alt="A quiet gallery of large painted canvases in soft daylight" data-parallax style="object-position:50% 55%">
-    <div class="wrap">
-      <span class="eyebrow" data-fade>The insight</span>
-      <h2 data-split>Wealth can be made in a decade. <em>Taste takes generations.</em></h2>
-      <p data-fade>That is the one thing a new fortune cannot buy, and the one thing Edmond de Rothschild can offer better than almost anyone.</p>
-    </div>
-  </section>
-
-  <!-- 03 model: three columns on a dark ground, each with its own reveal -->
-  <section class="night c-model" data-dark>
-    <div class="wrap sec">
-      <span class="eyebrow" data-fade>03 · The model</span>
-      <h2 data-split>Three parties. <em>One room.</em></h2>
-      <div class="mdl" data-stagger>
-        <div class="mdl-col">
-          <span class="mdl-n">i</span>
-          <h3>Our partners bring the room</h3>
-          <p>Hampton and The Founders Club curate the guest list from their own members.</p>
-          <div class="o-item">
-            <button class="o-btn" type="button" aria-expanded="false"><span class="o-t">In detail</span><span class="o-pm" aria-hidden="true"></span></button>
-            <div class="o-body"><div><ul class="o-list">
-              <li><b>Vetted members only</b><span>Founders who have built, raised or exited</span></li>
-              <li><b>Invited by the partner</b><span>The invitation comes from a trusted network, not a bank</span></li>
-              <li><b>An intimate format</b><span>A small, curated group at each chapter</span></li>
-            </ul></div></div>
-          </div>
-        </div>
-        <div class="mdl-col">
-          <span class="mdl-n">ii</span>
-          <h3>We bring the world</h3>
-          <p>Edmond de Rothschild hosts: the venues, the experts and the access.</p>
-          <div class="o-item">
-            <button class="o-btn" type="button" aria-expanded="false"><span class="o-t">In detail</span><span class="o-pm" aria-hidden="true"></span></button>
-            <div class="o-body"><div><ul class="o-list">
-              <li><b>Three cultural chapters</b><span>Art, fine watchmaking and wine</span></li>
-              <li><b>The Group's own network</b><span>Venues, curators and specialists few others can convene</span></li>
-              <li><b>Hosts, not salespeople</b><span>No presentations. No products on the table.</span></li>
-            </ul></div></div>
-          </div>
-        </div>
-        <div class="mdl-col">
-          <span class="mdl-n">iii</span>
-          <h3>The relationship follows</h3>
-          <p>The same senior bankers attend all three chapters, and the conversation continues after.</p>
-          <div class="o-item">
-            <button class="o-btn" type="button" aria-expanded="false"><span class="o-t">In detail</span><span class="o-pm" aria-hidden="true"></span></button>
-            <div class="o-body"><div><ul class="o-list">
-              <li><b>Continuity</b><span>Familiar faces across the whole series</span></li>
-              <li><b>Personal follow-up</b><span>A private note and a one-to-one invitation after each chapter</span></li>
-              <li><b>An open door</b><span>A private banking conversation, when the guest is ready</span></li>
-            </ul></div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 04 partners: image beside text, figures in a grid -->
-  <section class="sec wrap c-partners">
+  <!-- 03: partners, image beside text -->
+  <section class="c-sec wrap c-partners">
     <div class="c-partners-ph"><img src="img/c-garden.jpg" alt="Guests gathered around a long table in an ivy-covered villa garden" data-parallax></div>
     <div class="c-partners-copy">
-      <span class="eyebrow" data-fade>04 · The partners</span>
+      <span class="eyebrow" data-fade>03 · The partners</span>
       <h2 data-split>Their network. <em>Our world.</em></h2>
-      <p class="c-big" data-fade>We don't build the room from scratch. Two of the most respected founder communities already hold the trust of the audience we want to reach.</p>
+      <p class="c-body" data-fade>We don't build the room from scratch. Two of the most respected founder communities already hold the trust of the audience we want to reach.</p>
       <div class="c-figs">
         <div><div class="n" data-count="1700" data-suffix="+">1,700+</div><p>Founders Club entrepreneurs</p></div>
         <div><div class="n" data-count="20" data-prefix="$" data-suffix="bn+">$20bn+</div><p>Their combined annual revenue</p></div>
@@ -866,15 +836,15 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
     </div>
   </section>
 
-  <!-- 05 value: full-width accordion, three columns inside each -->
-  <section class="sec wrap c-value">
-    <div class="offer-head">
-      <span class="eyebrow" data-fade>05 · The value</span>
+  <!-- 04: value and measures, one accordion -->
+  <section class="c-sec wrap c-value">
+    <div class="c-head">
+      <span class="eyebrow" data-fade>04 · The value</span>
       <h2 data-split>Value on every side <em>of the table.</em></h2>
     </div>
     <div class="offer">
-      <div class="o-item open">
-        <button class="o-btn" type="button" aria-expanded="true"><span class="o-n">i</span><span class="o-t">For the guests</span><span class="o-pm" aria-hidden="true"></span></button>
+      <div class="o-item">
+        <button class="o-btn" type="button" aria-expanded="false"><span class="o-n">i</span><span class="o-t">For the guests</span><span class="o-pm" aria-hidden="true"></span></button>
         <div class="o-body"><div><div class="o-grid">
           <div><b>A richer cultural world</b><span>Art, time and wine, introduced by those who know them best.</span></div>
           <div><b>Rare access</b><span>Curators, collectors and makers, in rooms not open to the public.</span></div>
@@ -897,19 +867,16 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
           <div><b>A distinctive position</b><span>The heritage house of choice for Israel's new wealth.</span></div>
         </div></div></div>
       </div>
+      <div class="o-item">
+        <button class="o-btn" type="button" aria-expanded="false"><span class="o-n">iv</span><span class="o-t">How we measure success</span><span class="o-pm" aria-hidden="true"></span></button>
+        <div class="o-body"><div><div class="o-grid o-grid-4">
+          <div><b>Introductions</b><span>Qualified founders hosted across the series.</span></div>
+          <div><b>Conversations</b><span>Private follow-up meetings requested by guests.</span></div>
+          <div><b>Mandates</b><span>Relationships opened with the bank.</span></div>
+          <div><b>Referrals</b><span>Guests who introduce the next founder.</span></div>
+        </div></div></div>
+      </div>
     </div>
-  </section>
-
-  <!-- success: a quiet four-step strip -->
-  <section class="wrap c-measure">
-    <span class="eyebrow" data-fade>How we measure success</span>
-    <h2 data-split>Measured in relationships, <em>not attendance.</em></h2>
-    <ol class="c-steps" data-stagger>
-      <li><span>01</span><b>Introductions</b><p>Qualified founders hosted across the series</p></li>
-      <li><span>02</span><b>Conversations</b><p>Private follow-up meetings requested by guests</p></li>
-      <li><span>03</span><b>Mandates</b><p>Relationships opened with the bank</p></li>
-      <li><span>04</span><b>Referrals</b><p>Guests who introduce the next founder</p></li>
-    </ol>
   </section>
 
   <a class="next wrap" href="#chapters">
