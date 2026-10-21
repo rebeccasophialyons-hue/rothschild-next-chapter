@@ -355,7 +355,7 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
 .c-sec{padding-block:clamp(64px,8vw,112px)}
 .c-sec + .c-sec{border-top:1px solid var(--rule)}
 .c-sec h2{font-size:clamp(32px,3.4vw,52px);line-height:1.04;margin-top:20px}
-.c-body{margin-top:20px;max-width:560px;color:var(--ink-soft);font-size:17px;line-height:1.6}
+.c-body{margin-top:20px;max-width:460px;color:var(--ink-soft);font-size:17px;line-height:1.55}
 .c-body + .c-body{margin-top:14px}
 
 .c-hero .txt{max-width:640px}
@@ -408,6 +408,7 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
 
 @media (max-width:980px){
   .c-idea{grid-template-columns:1fr}
+  .c-body{font-size:16px}
   .c-idea-art{margin:8px auto 0;max-width:440px}
   .pcards,.c-steps{grid-template-columns:1fr}
   .pcard,.pcard+.pcard{padding:20px 0;border-left:0;border-bottom:1px solid var(--rule)}
@@ -416,19 +417,28 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
 }
 
 /* commercial case: measures shown, figures in a reveal */
-.measures{margin-top:clamp(24px,3vw,36px);max-width:520px}
+.measures{margin-top:clamp(24px,3vw,36px)}
 .measures .eyebrow{margin-bottom:10px}
-.measures ol{list-style:none;margin:0;padding:0;border-top:1px solid rgba(241,239,234,.4);counter-reset:m}
-.measures li{display:grid;grid-template-columns:150px 1fr;gap:16px;padding:10px 0;border-bottom:1px solid rgba(241,239,234,.2);align-items:baseline}
-.measures b{font-family:var(--serif);font-weight:400;font-size:20px;color:var(--cream)}
-.measures span{font-size:14px;line-height:1.45;color:var(--cream-soft)}
 .o-figs-4{display:grid;grid-template-columns:repeat(4,auto);justify-content:start;gap:24px}
 .next-arrow h2{display:flex;align-items:baseline;gap:.35em}
 .next-arrow h2 i{font-style:normal;display:inline-block;transition:transform .6s var(--ease)}
 .next-arrow:hover h2 i{transform:translateX(12px)}
 @media (max-width:980px){
-  .measures li{grid-template-columns:1fr;gap:2px}
   .o-figs-4{grid-template-columns:1fr 1fr}
+}
+
+/* measures: five points on a line; hover or tap one to read it */
+.measures{max-width:560px}
+.mline{list-style:none;margin:6px 0 0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);position:relative}
+.mline::before{content:'';position:absolute;left:0;right:0;top:7px;height:1px;background:rgba(241,239,234,.35)}
+.mstep{display:flex;flex-direction:column;align-items:flex-start;gap:12px;width:100%;padding:0 6px 0 0;text-align:left;color:var(--cream-soft);transition:color .4s}
+.mstep i{position:relative;z-index:1;width:15px;height:15px;border-radius:50%;border:1px solid var(--cream);background:rgba(13,12,12,.6);transition:background .4s,transform .4s var(--ease)}
+.mstep span{font-family:var(--serif);font-size:clamp(16px,1.3vw,19px);line-height:1.15}
+.mstep:hover,.mstep.on{color:var(--cream)}
+.mstep.on i{background:var(--cream);transform:scale(1.15)}
+.mdesc{margin-top:18px!important;min-height:3.2em;font-size:15px!important}
+@media (max-width:980px){
+  .mstep span{font-size:14px}
 }
 
 /* enquiry */
@@ -804,20 +814,21 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
   <div class="frames">
   <section class="scene scene-offer c-return" data-dark>
     <span class="no">iv</span>
-    <img src="img/i-figs.jpg" alt="Silver coupes of figs, blackberries and whipped cream on a steel counter" data-parallax style="object-position:50% 50%;--sep:.02;--b:.92">
+    <img src="img/i-figs2.jpg" alt="Silver coupes of figs, blackberries and whipped cream on a sunlit steel counter" data-parallax style="object-position:50% 50%;--sep:.02;--b:.9">
     <div class="scene-copy wrap">
       <div class="so-left">
         <span class="eyebrow" data-fade>04 · The commercial case</span>
         <h2 data-split>A direct route to a <em>hard-to-reach market.</em></h2>
         <div class="measures">
           <span class="eyebrow">How we will measure success</span>
-          <ol>
-            <li><b>Attendance</b><span>Qualified founders hosted across the three events</span></li>
-            <li><b>Engagement</b><span>Private follow-up meetings requested by guests</span></li>
-            <li><b>Conversion</b><span>New client relationships opened, and assets brought under management</span></li>
-            <li><b>Referrals</b><span>Guests who introduce the next founder</span></li>
-            <li><b>Partner renewal</b><span>Hampton and The Founders Club committing to a second season</span></li>
+          <ol class="mline">
+            <li><button type="button" class="mstep on" data-d="Qualified founders hosted across the three events"><i></i><span>Attendance</span></button></li>
+            <li><button type="button" class="mstep" data-d="Private follow-up meetings requested by guests"><i></i><span>Engagement</span></button></li>
+            <li><button type="button" class="mstep" data-d="New client relationships opened, and assets brought under management"><i></i><span>Conversion</span></button></li>
+            <li><button type="button" class="mstep" data-d="Guests who introduce the next founder"><i></i><span>Referrals</span></button></li>
+            <li><button type="button" class="mstep" data-d="Hampton and The Founders Club committing to a second season"><i></i><span>Partner renewal</span></button></li>
           </ol>
+          <p class="mdesc" aria-live="polite">Qualified founders hosted across the three events</p>
         </div>
       </div>
       <div class="offer offer-dark">
@@ -1094,6 +1105,13 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
       var t = document.querySelector('[data-view="concept"] ' + b.dataset.to);
       if (t) window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 60, behavior: reduce ? 'auto' : 'smooth' });
     });
+  });
+
+  /* ---------- commercial case: hover or tap a point on the line to read it ---------- */
+  var mdesc = document.querySelector('.mdesc');
+  $$('.mstep').forEach(function(b){
+    function show(){ $$('.mstep').forEach(function(x){ x.classList.toggle('on', x === b); }); mdesc.textContent = b.dataset.d; }
+    b.addEventListener('mouseenter', show); b.addEventListener('focus', show); b.addEventListener('click', show);
   });
 
   /* ---------- enquiry form (a preview: nothing is sent from the proposal) ---------- */
