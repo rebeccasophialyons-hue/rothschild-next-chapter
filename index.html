@@ -475,10 +475,10 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
   <section class="years" data-dark>
     <div class="stages">
       <div class="y-stage"><img src="img/street-1882.jpg" alt="An early street in Tel Aviv, lined with cypress trees"><div class="y-num">1882</div><p class="y-line">144 years of experience.</p></div>
-      <div class="y-stage"><img src="img/f-telaviv-night.jpg" alt="A restored Tel Aviv building at night, its tall windows lit warm"><div class="y-num">2026</div><p class="y-line">144 years of experience.</p></div>
+      <div class="y-stage"><img src="img/m-towers.jpg" alt="Tel Aviv towers rising out of a golden morning haze"><div class="y-num">2026</div><p class="y-line">144 years of experience.</p></div>
     </div>
     <div class="y-sticky" aria-hidden="true">
-      <div class="y-bg"><img class="on" src="img/street-1882.jpg" alt="" style="object-position:50% 55%"><img src="img/f-telaviv-night.jpg" alt="" style="object-position:50% 34%"></div>
+      <div class="y-bg"><img class="on" src="img/street-1882.jpg" alt="" style="object-position:50% 55%"><img src="img/m-towers.jpg" alt="" style="object-position:50% 30%"></div>
       <div class="roller"></div>
       <div class="y-swap y-static"><p>144 years of experience.</p></div>
     </div>
@@ -497,7 +497,7 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
 
   <section class="scene scene-offer" data-dark>
     <span class="no">ii</span>
-    <img src="img/m-tuscany.jpg" alt="Cypress trees and golden fields beneath a mountain at sunset" data-parallax style="object-position:50% 42%;--sep:.04;--sat:1;--b:.92">
+    <img src="img/m-olive-glass.jpg" alt="A cocktail glass with a single olive on a pale stone surface" data-parallax style="object-position:40% 60%;--sep:.04;--sat:1;--b:.82">
     <div class="scene-copy wrap">
       <div class="so-left">
         <span class="eyebrow" data-fade>Our services</span>
@@ -535,7 +535,7 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
 
   <section class="scene" data-dark>
     <span class="no">iii</span>
-    <img src="img/m-garden-table.jpg" alt="Iron garden chairs around a table in dappled afternoon sun" data-parallax style="object-position:50% 70%;--sep:.04;--sat:1;--b:.95">
+    <img src="img/m-courtyard.jpg" alt="A stone courtyard with iron chairs, a lantern-lit table and a fig tree" data-parallax style="object-position:50% 72%;--sep:.04;--sat:1;--b:.9">
     <div class="scene-copy wrap">
       <span class="eyebrow" data-fade>Personal service</span>
       <h2 data-split>One team, who knows you <em>and your family.</em></h2>
@@ -941,7 +941,9 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
     (function follow(){ cx += (mx - cx) * 0.18; cy += (my - cy) * 0.18; cur.style.transform = 'translate3d(' + cx + 'px,' + cy + 'px,0)'; requestAnimationFrame(follow); })();
   }
 
-  go(location.hash.slice(1) || 'home', false);
+  // every visit starts on the cover, whatever link it came from
+  if (location.hash) { try { history.replaceState(null, "", location.pathname + location.search); } catch (e) {} }
+  go("home", false);
 })();
 </script>
 
