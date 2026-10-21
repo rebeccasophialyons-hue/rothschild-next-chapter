@@ -371,6 +371,38 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
 .c-index button:hover{color:var(--cream);padding-left:8px}
 .c-index span{font-family:var(--serif);font-style:italic;letter-spacing:0;text-transform:none;font-size:15px;color:var(--cream);width:22px}
 
+/* chapters opening: the doorway room deepened to sage; each title is cut from its photograph, lifted towards cream, and doubles as the index */
+.ch-words{--cw:min(7vw,9.5vh);--sage-deep:38,44,33;position:relative;display:flex;min-height:100vh;min-height:100svh;background:rgb(var(--sage-deep)) url(img/ch-garden-party.jpg) 50% 55%/cover no-repeat;color:var(--cream)}
+.ch-words::before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(var(--sage-deep),.74) 0%,rgba(var(--sage-deep),.52) 42%,rgba(var(--sage-deep),.18) 75%,rgba(var(--sage-deep),.1) 100%),linear-gradient(180deg,rgba(var(--sage-deep),.4) 0%,rgba(var(--sage-deep),0) 25%,rgba(var(--sage-deep),0) 70%,rgba(var(--sage-deep),.5) 100%)}
+.ch-words .wrap{position:relative;z-index:1;display:flex;flex-direction:column;justify-content:space-between;gap:28px;padding-top:clamp(92px,12vh,140px);padding-bottom:clamp(22px,3.5vh,48px)}
+.ch-words .eyebrow{color:var(--cream-soft)}
+.cw-list{list-style:none;margin:0;padding:0;max-width:680px;border-top:1px solid rgba(241,239,234,.55)}
+.cw-list li{border-bottom:1px solid var(--rule-dark)}
+.cw-list button{display:block;width:100%;padding:clamp(10px,1.6vh,16px) 0 clamp(8px,1.4vh,14px);text-align:left;transition:opacity .6s var(--ease)}
+.cw-k{display:flex;justify-content:flex-start;gap:12px;font-size:var(--t-label);letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:var(--cream-soft)}
+.cw-k i{font-family:var(--serif);font-size:16px;letter-spacing:0;text-transform:none;color:var(--cream);margin-right:10px}
+.cw-k > span + span::before{content:"·";margin-right:12px}
+.cw-w{display:inline-block;padding:0 .05em .1em 0;font-family:var(--serif);font-size:var(--cw);line-height:.9;letter-spacing:-.03em;color:transparent;background-image:linear-gradient(rgba(241,239,234,var(--lift,.42)),rgba(241,239,234,var(--lift,.42))),var(--img);background-size:100% 100%,var(--bs,130%) auto;background-repeat:no-repeat;background-position:0 0,var(--p0,25% 45%);-webkit-background-clip:text;background-clip:text;filter:sepia(.18) saturate(.9) brightness(var(--br,1.08));animation:cwdrift 22s ease-in-out infinite alternate;transition:background-size 1.4s var(--ease)}
+.cw-list li:nth-child(2) .cw-w{animation-delay:-7s}
+.cw-list li:nth-child(3) .cw-w{animation-delay:-14s}
+@keyframes cwdrift{from{background-position:0 0,var(--p0,25% 45%)}to{background-position:0 0,var(--p1,75% 55%)}}
+.cw-list:hover button:not(:hover){opacity:.35}
+.cw-list button:hover .cw-w,.cw-list button:focus-visible .cw-w{background-size:100% 100%,calc(var(--bs,130%) + 20%) auto}
+.cw-foot{display:flex;justify-content:flex-start;align-items:baseline;gap:clamp(24px,3vw,48px)}
+.cw-line{font-family:var(--serif);font-size:var(--t-heading);line-height:1.1}
+.cw-sub{max-width:360px;font-size:15px;line-height:1.5;color:var(--cream-soft)}
+@media (max-width:760px){
+  .ch-words{--cw:min(6vh,11vw)}
+  .ch-words{background-position:78% 50%}
+  .ch-words::before{background:linear-gradient(180deg,rgba(var(--sage-deep),.66) 0%,rgba(var(--sage-deep),.58) 50%,rgba(var(--sage-deep),.72) 100%)}
+  .ch-words .wrap{justify-content:flex-start}
+  .cw-list{margin-top:4px}
+  .cw-list button{padding:16px 0 14px}
+  .cw-foot{margin-top:auto;padding-top:24px;flex-direction:column;align-items:flex-start;gap:8px}
+  .cw-list:hover button:not(:hover){opacity:1}
+}
+@media (prefers-reduced-motion: reduce){.cw-w{animation:none}}
+
 .offer-light{margin-top:clamp(28px,3vw,40px);border-top:1px solid var(--ink);max-width:620px}
 .offer-light .o-btn{grid-template-columns:1fr 24px;gap:16px;padding:18px 0}
 .offer-light .o-t{font-size:clamp(21px,1.7vw,25px)}
@@ -447,26 +479,6 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
   .mstep span{font-size:14px}
 }
 
-/* chapters opening: three framed doors fill the screen, side by side on every device */
-.ch-open{padding:0!important;height:100vh;height:100svh;min-height:520px;background:var(--night)}
-.ch-open .doors{gap:1px;height:100%;background:rgba(241,239,234,.55)}
-.ch-open .door .name .no{position:static;display:block;margin-bottom:10px;background:none;padding:0}
-.ch-open{position:relative}
-.ch-open::before{content:"";position:absolute;left:0;right:0;top:0;height:180px;z-index:3;pointer-events:none;background:linear-gradient(180deg,rgba(11,10,10,.55),rgba(11,10,10,0))}
-.ch-open .door .name{padding-bottom:clamp(32px,5vw,64px)}
-button.door{padding:0;text-align:left;cursor:pointer}
-/* chapters opening: a warm olive-sage wash, matched to the limewashed plaster in the moodboard */
-.ch-open .door img{filter:sepia(.1) saturate(.92) brightness(.86)}
-.ch-open .door:hover img{filter:sepia(.1) saturate(.92) brightness(1)}
-.ch-open .door .ph::before,.ch-open .door .ph::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none}
-.ch-open .door .ph::before{background:#a6aa80;mix-blend-mode:color;opacity:.14}
-.ch-open .door .ph::after{background:#b4b386;mix-blend-mode:soft-light;opacity:.6}
-.ch-open .door .no{font-family:var(--sans);font-style:normal;font-size:var(--t-label);letter-spacing:.16em;text-transform:uppercase;font-weight:500;color:var(--cream);text-shadow:0 1px 14px rgba(0,0,0,.55)}
-@media (max-width:980px){
-  .ch-open .doors{grid-template-columns:repeat(3,1fr);grid-template-rows:1fr;gap:1px}
-  .ch-open .door .name{padding:0 10px 14px;font-size:clamp(14px,4vw,19px)}
-  .ch-open .door .name .no{font-size:10px;letter-spacing:.12em;margin-bottom:6px}
-}
 
 /* enquiry */
 .enquire{display:grid;grid-template-columns:5fr 7fr;gap:clamp(40px,7vw,120px);padding-block:clamp(96px,12vw,170px) clamp(72px,8vw,110px);align-items:start}
@@ -891,12 +903,18 @@ button.door{padding:0;text-align:left;cursor:pointer}
 
 <!-- ================= THE CHAPTERS ================= -->
 <main class="view" data-view="chapters" hidden>
-  <section class="choose ch-open" data-dark>
-      <nav class="doors" aria-label="The three chapters">
-      <button type="button" class="door" data-jump="0" style="--i:0"><div class="ph"><img src="img/ch-hero-table.jpg" alt="" style="object-position:40% 55%"></div><span class="name"><span class="no">Chapter I</span><span>The Founders' Table</span></span></button>
-      <button type="button" class="door" data-jump="1" style="--i:1"><div class="ph"><img src="img/ch-hero-watch.jpg" alt="" style="object-position:55% 45%"></div><span class="name"><span class="no">Chapter II</span><span>The Art of Time</span></span></button>
-      <button type="button" class="door" data-jump="2" style="--i:2"><div class="ph"><img src="img/wine-wall.jpg" alt="" style="object-position:50% 70%"></div><span class="name"><span class="no">Chapter III</span><span>Behind the Label</span></span></button>
-    </nav>
+  <section class="ch-words" data-dark>
+    <div class="wrap">
+      <span class="eyebrow" data-fade data-now style="--d:200ms">The chapters</span>
+      <nav aria-label="The three chapters">
+        <ol class="cw-list">
+          <li data-fade data-now style="--d:350ms"><button type="button" data-jump="0"><span class="cw-k"><span><i>i</i>Chapter I</span><span>Art · Tel Aviv</span></span><span class="cw-w" style="--img:url(img/ch-hero-gallery.jpg);--p0:20% 30%;--p1:70% 60%">The Founders’ <em>Table.</em></span></button></li>
+          <li data-fade data-now style="--d:550ms"><button type="button" data-jump="1"><span class="cw-k"><span><i>ii</i>Chapter II</span><span>Swiss watchmaking</span></span><span class="cw-w" style="--img:url(img/ch-hero-watch.jpg);--lift:.52;--p0:0% 40%;--p1:40% 60%">The Art <em>of Time.</em></span></button></li>
+          <li data-fade data-now style="--d:750ms"><button type="button" data-jump="2"><span class="cw-k"><span><i>iii</i>Chapter III</span><span>Rothschild wine</span></span><span class="cw-w" style="--img:url(img/wine-wall.jpg);--p0:30% 40%;--p1:60% 70%;--lift:.5">Behind <em>the Label.</em></span></button></li>
+        </ol>
+      </nav>
+      <p class="cw-foot" data-fade data-now style="--d:1000ms"><span class="cw-line">Three evenings, <em>one circle.</em></span><span class="cw-sub">Each evening opens a different door into the world of Edmond de Rothschild.</span></p>
+    </div>
   </section>
 
   <div class="frames">
@@ -1144,7 +1162,7 @@ button.door{padding:0;text-align:left;cursor:pointer}
     b.addEventListener('mouseenter', show); b.addEventListener('focus', show); b.addEventListener('click', show);
   });
 
-  /* ---------- chapters: each door scrolls to its chapter ---------- */
+  /* ---------- chapters: each entry in the index scrolls to its chapter ---------- */
   $$('[data-jump]').forEach(function(b){
     b.addEventListener('click', function(){
       var t = document.querySelectorAll('[data-view="chapters"] .frames .scene')[+b.dataset.jump];
