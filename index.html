@@ -441,6 +441,19 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
   .mstep span{font-size:14px}
 }
 
+/* chapters opening: three panels, one per chapter */
+.ch-hero .tri{position:absolute;inset:0;display:grid;grid-template-columns:repeat(3,1fr);gap:3px;background:var(--night)}
+.ch-hero .tri figure{position:relative;margin:0;overflow:hidden}
+.ch-hero .tri img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.04);transition:transform 1.6s var(--ease),filter 1s var(--ease);filter:brightness(.92)}
+.ch-hero .tri figure:hover img{transform:scale(1.08);filter:brightness(1)}
+.motion .ch-hero .tri figure{clip-path:inset(100% 0 0 0);animation:triIn 1.4s var(--ease-io) both;animation-delay:calc(.15s + var(--i) * .16s)}
+@keyframes triIn{to{clip-path:inset(0 0 0 0)}}
+.ch-hero::after{background:linear-gradient(0deg,rgba(11,10,10,.82) 0%,rgba(11,10,10,.45) 30%,rgba(11,10,10,0) 58%),linear-gradient(180deg,rgba(11,10,10,.45) 0%,rgba(11,10,10,0) 16%)}
+@media (max-width:980px){
+  .ch-hero .tri{grid-template-columns:1fr;grid-template-rows:repeat(3,1fr)}
+  .ch-hero::after{background:linear-gradient(0deg,rgba(11,10,10,.9) 0%,rgba(11,10,10,.55) 35%,rgba(11,10,10,0) 60%)}
+}
+
 /* enquiry */
 .enquire{display:grid;grid-template-columns:5fr 7fr;gap:clamp(40px,7vw,120px);padding-block:clamp(96px,12vw,170px) clamp(72px,8vw,110px);align-items:start}
 .enq-copy h2{margin-top:20px;font-size:clamp(34px,4.2vw,62px);line-height:1.04}
@@ -864,8 +877,12 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
 
 <!-- ================= THE CHAPTERS ================= -->
 <main class="view" data-view="chapters" hidden>
-  <section class="hero p-hero" data-dark>
-    <div class="bgw"><img class="bg" src="img/c-lilies.jpg" alt="Water lilies floating in a stone pool" style="object-position:50% 45%"></div>
+  <section class="hero ch-hero" data-dark>
+    <div class="tri" aria-hidden="false">
+      <figure style="--i:0"><img src="img/ch-hero-table.jpg" alt="A candlelit table laid with crystal and linen" style="object-position:50% 55%"></figure>
+      <figure style="--i:1"><img src="img/ch-hero-gallery.jpg" alt="A salon wall hung with modern paintings above green panelling" style="object-position:50% 40%"></figure>
+      <figure style="--i:2"><img src="img/ch-hero-watch.jpg" alt="A wristwatch caught in motion" style="object-position:40% 50%"></figure>
+    </div>
     <div class="hero-copy">
       <div class="wrap">
         <div class="txt">
