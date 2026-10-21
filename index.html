@@ -355,7 +355,8 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
 .c-sec{padding-block:clamp(64px,8vw,112px)}
 .c-sec + .c-sec{border-top:1px solid var(--rule)}
 .c-sec h2{font-size:clamp(32px,3.4vw,52px);line-height:1.04;margin-top:20px}
-.c-body{margin-top:20px;max-width:540px;color:var(--ink-soft);font-size:17px;line-height:1.6}
+.c-body{margin-top:20px;max-width:560px;color:var(--ink-soft);font-size:17px;line-height:1.6}
+.c-body + .c-body{margin-top:14px}
 
 .c-hero .txt{max-width:640px}
 .c-index{list-style:none;margin:clamp(28px,3vw,40px) 0 0;padding:0;border-top:1px solid var(--rule-dark);max-width:460px}
@@ -364,8 +365,7 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
 .c-index button:hover{color:var(--cream);padding-left:8px}
 .c-index span{font-family:var(--serif);font-style:italic;letter-spacing:0;text-transform:none;font-size:15px;color:var(--cream);width:22px}
 
-/* reveals on ivory */
-.offer-light{margin-top:clamp(28px,3vw,40px);border-top:1px solid var(--ink);max-width:560px}
+.offer-light{margin-top:clamp(28px,3vw,40px);border-top:1px solid var(--ink);max-width:620px}
 .offer-light .o-btn{grid-template-columns:1fr 24px;gap:16px;padding:18px 0}
 .offer-light .o-t{font-size:clamp(21px,1.7vw,25px)}
 .offer-light .o-pm{width:15px;height:15px}
@@ -375,44 +375,50 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
 
 /* 01 the idea */
 .c-idea{display:grid;grid-template-columns:6fr 5fr;gap:clamp(40px,7vw,120px);align-items:center}
-.c-pull{margin-top:26px;padding-left:20px;border-left:1px solid var(--ink);max-width:520px;font-family:var(--serif);font-style:italic;font-size:clamp(20px,1.6vw,24px);line-height:1.3}
-.c-idea-art{position:relative;margin:0 0 0 auto;width:100%;max-width:460px;aspect-ratio:4/5}
+.c-idea-art{margin:0 0 0 auto;width:100%;max-width:440px;aspect-ratio:4/5;overflow:hidden}
 .c-idea-art img{width:100%;height:100%;object-fit:cover}
-.invite{position:absolute;left:-14%;bottom:-8%;width:76%;padding:30px 24px 26px;background:#f8f6f0;text-align:center;box-shadow:0 30px 60px -30px rgba(28,25,24,.45);outline:1px solid rgba(28,25,24,.22);outline-offset:-9px;display:flex;flex-direction:column;align-items:center;gap:6px}
-.inv-k{font-size:11px;letter-spacing:.24em;text-transform:uppercase;font-weight:500}
-.inv-s{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--ink-soft);margin-top:6px}
-.inv-t{font-family:var(--serif);font-size:clamp(24px,2.1vw,30px);line-height:1.1;margin:4px 0}
-.inv-r{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft)}
-.inv-f{margin-top:10px;padding-top:10px;border-top:1px solid var(--rule);font-family:var(--serif);font-style:italic;font-size:14px;color:var(--ink-soft)}
 
 /* 02 the room */
-.c-room{display:grid;grid-template-columns:4fr 7fr;gap:clamp(40px,6vw,96px);align-items:center}
-.lift{position:relative;overflow:hidden;aspect-ratio:9/14;background:#5d6152}
-.lift-v{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.pcards{display:grid;grid-template-columns:1fr 1fr;margin-top:clamp(28px,3vw,40px);border-top:1px solid var(--ink)}
-.pcard{padding:22px 24px 0 0;min-width:0}
-.pcard+.pcard{padding-left:24px;padding-right:0;border-left:1px solid var(--rule)}
-.pcard p{margin-top:10px;color:var(--ink-soft);font-size:15px;line-height:1.55}
-.pfig{display:flex;gap:22px;margin-top:18px}
-.pfig b{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(28px,2.4vw,38px);line-height:1;letter-spacing:-.02em;white-space:nowrap}
+.c-room .c-head{max-width:760px}
+.pcards{display:grid;grid-template-columns:1fr 1fr;margin-top:clamp(36px,4vw,56px);border-top:1px solid var(--ink)}
+.pcard{padding:24px 32px 0 0;min-width:0}
+.pcard+.pcard{padding-left:32px;padding-right:0;border-left:1px solid var(--rule)}
+.pcard p{margin-top:10px;color:var(--ink-soft);font-size:16px;line-height:1.55;max-width:520px}
+.pfig{display:flex;gap:28px;margin-top:18px}
+.pfig b{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(30px,2.6vw,42px);line-height:1;letter-spacing:-.02em;white-space:nowrap}
 .pfig span{display:block;margin-top:6px;font-size:13px;color:var(--ink-soft);line-height:1.35}
+.c-steps{list-style:none;margin:clamp(48px,5vw,72px) 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr)}
+.c-steps li{position:relative;padding:24px 28px 0 0;border-top:1px solid var(--ink);min-width:0}
+.c-steps li+li{padding-left:28px}
+.c-steps li+li::before{content:'';position:absolute;left:0;top:-5px;width:9px;height:9px;border-radius:50%;background:var(--ivory);border:1px solid var(--ink);transform:translateX(-50%)}
+.c-steps span{font-family:var(--serif);color:var(--brass);font-size:17px}
+.c-steps b{display:block;margin-top:8px;font-family:var(--serif);font-weight:400;font-size:clamp(22px,1.9vw,27px);line-height:1.15}
+.c-steps p{margin-top:8px;color:var(--ink-soft);font-size:15px;line-height:1.5;max-width:300px}
 
-/* 04 the return */
+/* 04 the commercial case */
 .c-return{display:grid;grid-template-columns:7fr 4fr;gap:clamp(40px,6vw,96px);align-items:center}
-.returns{margin:clamp(28px,3vw,40px) 0 0;border-top:1px solid var(--ink)}
-.returns > div{display:grid;grid-template-columns:200px 1fr;gap:24px;padding:18px 0;border-bottom:1px solid var(--rule)}
-.returns dt{font-family:var(--serif);font-size:clamp(20px,1.6vw,23px);line-height:1.2}
+.c-figs-row{display:grid;grid-template-columns:repeat(4,1fr);margin-top:clamp(28px,3vw,40px);border-top:1px solid var(--ink)}
+.c-figs-row > div{padding:18px 14px 0 0;min-width:0}
+.c-figs-row > div+div{padding-left:14px;border-left:1px solid var(--rule)}
+.c-figs-row b{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(30px,2.8vw,44px);line-height:1;letter-spacing:-.02em;white-space:nowrap}
+.c-figs-row span{display:block;margin-top:8px;font-size:13px;color:var(--ink-soft);line-height:1.35}
+.returns{margin:clamp(28px,3vw,40px) 0 0;border-top:1px solid var(--rule)}
+.returns > div{display:grid;grid-template-columns:220px 1fr;gap:24px;padding:16px 0;border-bottom:1px solid var(--rule)}
+.returns dt{font-family:var(--serif);font-size:clamp(19px,1.5vw,22px);line-height:1.2}
 .returns dd{margin:0;color:var(--ink-soft);font-size:16px;line-height:1.5}
 .c-return-ph{position:relative;overflow:hidden;aspect-ratio:4/5}
 .c-return-ph img{position:absolute;left:0;top:-8%;width:100%;height:116%;max-width:none;object-fit:cover}
 
 @media (max-width:980px){
-  .c-idea,.c-room,.c-return{grid-template-columns:1fr}
-  .c-idea-art{margin:24px auto 40px;max-width:420px}
-  .invite{left:-6%;width:84%}
-  .lift{max-width:420px;width:100%}
-  .pcards{grid-template-columns:1fr}
+  .c-idea,.c-return{grid-template-columns:1fr}
+  .c-idea-art{margin:8px auto 0;max-width:440px}
+  .pcards,.c-steps{grid-template-columns:1fr}
   .pcard,.pcard+.pcard{padding:20px 0;border-left:0;border-bottom:1px solid var(--rule)}
+  .c-steps li,.c-steps li+li{padding:20px 0}
+  .c-steps li+li::before{display:none}
+  .c-figs-row{grid-template-columns:1fr 1fr}
+  .c-figs-row > div:nth-child(3){padding-left:0;border-left:0}
+  .c-figs-row > div:nth-child(n+3){margin-top:18px}
   .returns > div{grid-template-columns:1fr;gap:6px}
   .c-return-ph{order:-1;aspect-ratio:4/3}
 }
@@ -713,113 +719,105 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
           <ol class="c-index" data-fade data-now style="--d:1400ms">
             <li><button type="button" data-to=".c-idea"><span>01</span>The idea</button></li>
             <li><button type="button" data-to=".c-room"><span>02</span>The room</button></li>
-            <li><button type="button" data-to=".c-how"><span>03</span>How it works</button></li>
-            <li><button type="button" data-to=".c-return"><span>04</span>The return</button></li>
+            <li><button type="button" data-to=".c-bring"><span>03</span>What we bring</button></li>
+            <li><button type="button" data-to=".c-return"><span>04</span>The commercial case</button></li>
           </ol>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 01 the idea: copy left, an invitation card over a photograph right -->
+  <!-- 01 the idea -->
   <section class="c-sec wrap c-idea">
     <div class="c-idea-copy">
       <span class="eyebrow" data-fade>01 · The idea</span>
-      <h2 data-split>The allure of a private members' club. <em>Without the membership.</em></h2>
-      <p class="c-body" data-fade>We borrow what makes a private members' club so compelling: you cannot buy your way in. Guests are personally invited, each evening is closed to the outside world, and each one opens a door to the culture of established wealth: art, fine watchmaking and wine.</p>
-      <p class="c-pull" data-fade>Israel's founders built their fortunes in a decade. Most have yet to choose the bank that will look after them for the next thirty years.</p>
-      <div class="offer offer-light">
-        <div class="o-item">
-          <button class="o-btn" type="button" aria-expanded="false"><span class="o-t">The house rules</span><span class="o-pm" aria-hidden="true"></span></button>
-          <div class="o-body"><div><ul class="o-list">
-            <li><b>By invitation only</b><span>Guests are nominated by our partners, never by the bank.</span></li>
-            <li><b>Behind closed doors</b><span>No press, no presentations, no products on the table.</span></li>
-            <li><b>The same hosts</b><span>One team of senior bankers at every chapter.</span></li>
-            <li><b>In confidence</b><span>What is said in the room stays in the room.</span></li>
-          </ul></div></div>
-        </div>
-      </div>
+      <h2 data-split>Exclusive by design. <em>Open only by invitation.</em></h2>
+      <p class="c-body" data-fade>Founders who made their money quickly can buy almost anything. What they cannot buy is entry into the world that has always marked established wealth.</p>
+      <p class="c-body" data-fade>We open that world to a small, handpicked group: three private evenings built around art, fine watchmaking and wine, hosted by a banking family that has belonged to it for generations. Like the best private members' clubs, the value lies in who is invited, and who is not.</p>
     </div>
-    <figure class="c-idea-art">
-      <img src="img/i-waves.jpg" alt="Looking up through the curved white balconies of a Tel Aviv courtyard">
-      <div class="invite" data-fade>
-        <span class="inv-k">Edmond de Rothschild</span>
-        <span class="inv-s">requests the pleasure of your company at</span>
-        <span class="inv-t">The Founders' Series</span>
-        <span class="inv-r">Three chapters &middot; Tel Aviv &middot; 2026</span>
-        <span class="inv-f">By invitation of Hampton and The Founders Club</span>
-      </div>
-    </figure>
+    <figure class="c-idea-art"><img src="img/i-waves.jpg" alt="Looking up through the curved white balconies of a Tel Aviv courtyard"></figure>
   </section>
 
-  <!-- 02 the room: the lift doors open onto the partners -->
+  <!-- 02 the room: partners handpick the guests -->
   <section class="c-sec wrap c-room">
-    <div class="lift">
-      <video class="lift-v" src="img/lift.mp4" muted playsinline preload="auto" aria-label="Lift doors opening"></video>
-    </div>
-    <div class="c-room-copy">
+    <div class="c-head">
       <span class="eyebrow" data-fade>02 · The room</span>
-      <h2 data-split>The room is already built. <em>Our partners are opening the door.</em></h2>
-      <p class="c-body" data-fade>We are not starting from scratch. Two private founder communities have spent years gathering exactly the people we want to meet, and earning their trust. Think of each as a modern members' club for entrepreneurs: entry is vetted, and the value is who else is inside.</p>
-      <div class="pcards">
-        <div class="pcard">
-          <span class="eyebrow">Hampton</span>
-          <p>A private network for founders and CEOs who have built multimillion-dollar businesses, raised significant capital or sold a company. Members meet in small peer groups and at private dinners.</p>
-          <div class="pfig"><div><b data-count="1000" data-suffix="+">1,000+</b><span>members</span></div><div><b data-count="18">18</b><span>cities, incl. London and New York</span></div></div>
-        </div>
-        <div class="pcard">
-          <span class="eyebrow">The Founders Club</span>
-          <p>A community of entrepreneurs co-founded by Aaron Spivak. Brands including Mercury and Klaviyo already partner with the Club to reach its members.</p>
-          <div class="pfig"><div><b data-count="1700" data-suffix="+">1,700+</b><span>members</span></div><div><b data-count="20" data-prefix="$" data-suffix="bn+">$20bn+</b><span>combined annual revenue</span></div></div>
-        </div>
+      <h2 data-split>Our partners choose the guests. <em>We host them.</em></h2>
+      <p class="c-body" data-fade>Hampton and The Founders Club are private communities of vetted founders. For each evening, they handpick 10 to 15 of their most accomplished members and send the invitation in their own name. We do not need to find the right people. Our partners already know them.</p>
+    </div>
+    <div class="pcards">
+      <div class="pcard">
+        <span class="eyebrow">Hampton</span>
+        <p>A private network for founders and CEOs who have built multimillion-dollar businesses, raised significant capital or sold a company. Members meet in small peer groups and at private dinners.</p>
+        <div class="pfig"><div><b data-count="1000" data-suffix="+">1,000+</b><span>members</span></div><div><b data-count="18">18</b><span>cities, incl. London and New York</span></div></div>
+      </div>
+      <div class="pcard">
+        <span class="eyebrow">The Founders Club</span>
+        <p>A community of entrepreneurs co-founded by Aaron Spivak. Brands including Mercury and Klaviyo already partner with the Club to reach its members.</p>
+        <div class="pfig"><div><b data-count="1700" data-suffix="+">1,700+</b><span>members</span></div><div><b data-count="20" data-prefix="$" data-suffix="bn+">$20bn+</b><span>combined annual revenue</span></div></div>
       </div>
     </div>
+    <ol class="c-steps" data-stagger>
+      <li><span>01</span><b>Our partners select</b><p>10 to 15 founders per evening, invited in the partner's name</p></li>
+      <li><span>02</span><b>We host</b><p>Three private evenings across the season</p></li>
+      <li><span>03</span><b>Our bankers follow up</b><p>The same senior team, in person, after every evening</p></li>
+    </ol>
   </section>
 
-  <!-- 03 how it works: framed wallpaper -->
+  <!-- 03 what we bring: framed wallpaper -->
   <div class="frames">
-  <section class="scene scene-offer c-how" data-dark>
+  <section class="scene scene-offer c-bring" data-dark>
     <span class="no">iii</span>
-    <img src="img/i-busts.jpg" alt="Two classical busts on marble plinths in a sunlit green room" data-parallax style="object-position:50% 40%;--sep:.02;--b:.95">
+    <img src="img/m-tuscany.jpg" alt="Cypress trees and golden fields beneath a mountain at sunset" data-parallax style="object-position:50% 45%;--sep:.02;--b:.92">
     <div class="scene-copy wrap">
       <div class="so-left">
-        <span class="eyebrow" data-fade>03 · How it works</span>
-        <h2 data-split>Three chapters. <em>One relationship.</em></h2>
-        <p data-fade>Our partners send the invitations. We host the evenings. Our bankers build the relationships.</p>
+        <span class="eyebrow" data-fade>03 · What we bring</span>
+        <h2 data-split>Access only a heritage house <em>can offer.</em></h2>
+        <p data-fade>A new bank can offer a product. Edmond de Rothschild can open the doors of its own estates, cellars and collections.</p>
       </div>
       <div class="offer offer-dark">
         <div class="o-item open">
-          <button class="o-btn" type="button" aria-expanded="true"><span class="o-t">They invite</span><span class="o-pm" aria-hidden="true"></span></button>
-          <div class="o-body"><div><p class="o-lead">Our partners invite a small group of their most accomplished members. The invitation carries their name, not ours.</p></div></div>
+          <button class="o-btn" type="button" aria-expanded="true"><span class="o-t">Our vineyards</span><span class="o-pm" aria-hidden="true"></span></button>
+          <div class="o-body"><div><p class="o-lead">The family's wine estates, including Château Clarke in Bordeaux, with private tastings led by the winemakers themselves.</p></div></div>
         </div>
         <div class="o-item">
-          <button class="o-btn" type="button" aria-expanded="false"><span class="o-t">We host</span><span class="o-pm" aria-hidden="true"></span></button>
-          <div class="o-body"><div><p class="o-lead">Three private evenings, each built around a pillar of old-money culture: art, fine watchmaking and wine. No pitch. No products.</p></div></div>
+          <button class="o-btn" type="button" aria-expanded="false"><span class="o-t">The wine cellar</span><span class="o-pm" aria-hidden="true"></span></button>
+          <div class="o-body"><div><p class="o-lead">Rare vintages from the Edmond de Rothschild portfolio, opened for guests and explained by those who made them.</p></div></div>
         </div>
         <div class="o-item">
-          <button class="o-btn" type="button" aria-expanded="false"><span class="o-t">We stay</span><span class="o-pm" aria-hidden="true"></span></button>
-          <div class="o-body"><div><p class="o-lead">The same senior bankers host every chapter, then follow up in person. When a guest is ready to talk about their wealth, they already know who to call.</p></div></div>
+          <button class="o-btn" type="button" aria-expanded="false"><span class="o-t">The art gallery</span><span class="o-pm" aria-hidden="true"></span></button>
+          <div class="o-body"><div><p class="o-lead">The Edmond de Rothschild Center in Tel Aviv, opened after hours with its curators and the artists they champion.</p></div></div>
+        </div>
+        <div class="o-item">
+          <button class="o-btn" type="button" aria-expanded="false"><span class="o-t">Hotels and estates</span><span class="o-pm" aria-hidden="true"></span></button>
+          <div class="o-body"><div><p class="o-lead">The Group's hotels and private estates, available to guests for future stays and experiences.</p></div></div>
         </div>
       </div>
     </div>
   </section>
   </div>
 
-  <!-- 04 the return: three statements, measures in a reveal, still life alongside -->
+  <!-- 04 the commercial case -->
   <section class="c-sec wrap c-return">
     <div class="c-return-copy">
-      <span class="eyebrow" data-fade>04 · The return</span>
-      <h2 data-split>Everyone leaves <em>with something.</em></h2>
+      <span class="eyebrow" data-fade>04 · The commercial case</span>
+      <h2 data-split>A direct route to a <em>hard-to-reach market.</em></h2>
+      <div class="c-figs-row" data-stagger>
+        <div><b>30–45</b><span>handpicked founders across the series</span></div>
+        <div><b>3</b><span>private evenings</span></div>
+        <div><b>2</b><span>partner networks</span></div>
+        <div><b>1</b><span>dedicated banking team</span></div>
+      </div>
       <dl class="returns" data-stagger>
-        <div><dt>The guests</dt><dd>Entry to a world money alone cannot buy, and a trusted house, met on their own terms.</dd></div>
-        <div><dt>Our partners</dt><dd>A member benefit no other sponsor can offer, from a name that carries weight.</dd></div>
-        <div><dt>Edmond de Rothschild</dt><dd>Qualified founders, met before their liquidity event, not after it.</dd></div>
+        <div><dt>For Edmond de Rothschild</dt><dd>A qualified pipeline of founders, introduced through trusted channels and engaged before their liquidity event.</dd></div>
+        <div><dt>For our partners</dt><dd>A member benefit no other sponsor can offer, from a name that carries weight.</dd></div>
+        <div><dt>For the guests</dt><dd>Entry to a world money alone cannot buy, and a trusted house, met on their own terms.</dd></div>
       </dl>
       <div class="offer offer-light">
         <div class="o-item">
           <button class="o-btn" type="button" aria-expanded="false"><span class="o-t">How we will measure it</span><span class="o-pm" aria-hidden="true"></span></button>
           <div class="o-body"><div><ul class="o-list">
-            <li><b>Attendance</b><span>Qualified founders hosted across the three chapters.</span></li>
+            <li><b>Attendance</b><span>Qualified founders hosted across the three evenings.</span></li>
             <li><b>Engagement</b><span>Private follow-up meetings requested by guests.</span></li>
             <li><b>Conversion</b><span>New client relationships opened.</span></li>
             <li><b>Referrals</b><span>Guests who introduce the next founder.</span></li>
@@ -1033,7 +1031,6 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
     current = name; currentView = views[name];
     window.scrollTo(0, 0);
     if (name === 'founders') { yStage = -1; setStage(0); }
-    if (name === 'concept' && lift && motion) { lift.pause(); try { lift.currentTime = 0; } catch (e) {} }
     arm(currentView);
     frame();
   }
@@ -1083,24 +1080,6 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
       if (t) window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 60, behavior: reduce ? 'auto' : 'smooth' });
     });
   });
-
-  /* ---------- concept: the lift doors open once when the room comes into view, then hold open ---------- */
-  var lift = document.querySelector('.lift-v');
-  if (lift) {
-    var OPEN_AT = 2.9;
-    lift.addEventListener('timeupdate', function(){ if (lift.currentTime >= OPEN_AT) { lift.pause(); lift.currentTime = OPEN_AT; } });
-    var showOpen = function(){ try { lift.currentTime = OPEN_AT; } catch (e) {} };
-    if (!motion) { if (lift.readyState >= 1) showOpen(); else lift.addEventListener('loadedmetadata', showOpen, { once: true }); }
-    else {
-      new IntersectionObserver(function(es){
-        es.forEach(function(e){
-          if (e.isIntersecting && e.intersectionRatio > 0.55 && current === 'concept' && lift.paused && lift.currentTime < OPEN_AT) {
-            var p = lift.play(); if (p && p.catch) p.catch(showOpen);
-          }
-        });
-      }, { threshold: [0, 0.6] }).observe(lift);
-    }
-  }
 
   /* ---------- enquiry form (a preview: nothing is sent from the proposal) ---------- */
   var enq = document.getElementById('enqForm');
