@@ -444,7 +444,7 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
 /* chapters opening: three framed doors fill the screen, side by side on every device */
 .ch-open{padding:0!important;height:100vh;height:100svh;min-height:520px;background:var(--night)}
 .ch-open .doors{gap:1px;height:100%;background:rgba(241,239,234,.55)}
-.ch-open .door .no{top:calc(128px + env(safe-area-inset-top,0px))}
+.ch-open .door .name .no{position:static;display:block;margin-bottom:10px;background:none;padding:0}
 .ch-open{position:relative}
 .ch-open::before{content:"";position:absolute;left:0;right:0;top:0;height:180px;z-index:3;pointer-events:none;background:linear-gradient(180deg,rgba(11,10,10,.55),rgba(11,10,10,0))}
 .ch-open .door .name{padding-bottom:clamp(32px,5vw,64px)}
@@ -453,7 +453,7 @@ button.door{padding:0;text-align:left;cursor:pointer}
 @media (max-width:980px){
   .ch-open .doors{grid-template-columns:repeat(3,1fr);grid-template-rows:1fr;gap:1px}
   .ch-open .door .name{padding:0 10px 14px;font-size:clamp(14px,4vw,19px)}
-  .ch-open .door .no{top:calc(76px + env(safe-area-inset-top,0px));left:10px;font-size:10px;letter-spacing:.12em}
+  .ch-open .door .name .no{font-size:10px;letter-spacing:.12em;margin-bottom:6px}
 }
 
 /* enquiry */
@@ -881,9 +881,9 @@ button.door{padding:0;text-align:left;cursor:pointer}
 <main class="view" data-view="chapters" hidden>
   <section class="choose ch-open" data-dark>
       <nav class="doors" aria-label="The three chapters">
-      <button type="button" class="door" data-jump="0" style="--i:0"><div class="ph"><img src="img/ch-hero-table.jpg" alt="" style="object-position:40% 55%"></div><span class="no">Chapter I</span><span class="name"><span>The Founders' Table</span></span></button>
-      <button type="button" class="door" data-jump="1" style="--i:1"><div class="ph"><img src="img/ch-hero-watch.jpg" alt="" style="object-position:55% 45%"></div><span class="no">Chapter II</span><span class="name"><span>The Art of Time</span></span></button>
-      <button type="button" class="door" data-jump="2" style="--i:2"><div class="ph"><img src="img/wine-wall.jpg" alt="" style="object-position:50% 70%"></div><span class="no">Chapter III</span><span class="name"><span>Behind the Label</span></span></button>
+      <button type="button" class="door" data-jump="0" style="--i:0"><div class="ph"><img src="img/ch-hero-table.jpg" alt="" style="object-position:40% 55%"></div><span class="name"><span class="no">Chapter I</span><span>The Founders' Table</span></span></button>
+      <button type="button" class="door" data-jump="1" style="--i:1"><div class="ph"><img src="img/ch-hero-watch.jpg" alt="" style="object-position:55% 45%"></div><span class="name"><span class="no">Chapter II</span><span>The Art of Time</span></span></button>
+      <button type="button" class="door" data-jump="2" style="--i:2"><div class="ph"><img src="img/wine-wall.jpg" alt="" style="object-position:50% 70%"></div><span class="name"><span class="no">Chapter III</span><span>Behind the Label</span></span></button>
     </nav>
   </section>
 
