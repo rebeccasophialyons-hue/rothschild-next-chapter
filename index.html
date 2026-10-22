@@ -372,14 +372,14 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
 .c-index span{font-family:var(--serif);font-style:italic;letter-spacing:0;text-transform:none;font-size:15px;color:var(--cream);width:22px}
 
 /* chapters opening: the doorway room deepened to sage; each title is cut from its photograph, lifted towards cream, and doubles as the index */
-.ch-words{--cw:min(7vw,9.5vh);--sage-deep:38,44,33;position:relative;display:flex;min-height:100vh;min-height:100svh;background:rgb(var(--sage-deep)) url(img/ch-garden-party.jpg) 50% 55%/cover no-repeat;color:var(--cream)}
+.ch-words{--cw:min(5.4vw,7.4vh);--sage-deep:38,44,33;position:relative;display:flex;min-height:100vh;min-height:100svh;background:rgb(var(--sage-deep)) url(img/ch-garden-motion.jpg) 50% 55%/cover no-repeat;color:var(--cream)}
 .ch-words::before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(var(--sage-deep),.74) 0%,rgba(var(--sage-deep),.52) 42%,rgba(var(--sage-deep),.18) 75%,rgba(var(--sage-deep),.1) 100%),linear-gradient(180deg,rgba(var(--sage-deep),.4) 0%,rgba(var(--sage-deep),0) 25%,rgba(var(--sage-deep),0) 70%,rgba(var(--sage-deep),.5) 100%)}
 .ch-words .wrap{position:relative;z-index:1;display:flex;flex-direction:column;justify-content:space-between;gap:28px;padding-top:clamp(92px,12vh,140px);padding-bottom:clamp(22px,3.5vh,48px)}
 .ch-words .eyebrow{color:var(--cream-soft)}
-.cw-list{list-style:none;margin:0;padding:0;max-width:680px;border-top:1px solid rgba(241,239,234,.55)}
+.cw-list{list-style:none;margin:0;padding:0;max-width:520px;border-top:1px solid var(--rule-dark)}
 .cw-list li{border-bottom:1px solid var(--rule-dark)}
 .cw-list button{display:block;width:100%;padding:clamp(10px,1.6vh,16px) 0 clamp(8px,1.4vh,14px);text-align:left;transition:opacity .6s var(--ease)}
-.cw-k{display:flex;justify-content:flex-start;gap:12px;font-size:var(--t-label);letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:var(--cream-soft)}
+.cw-k{display:flex;justify-content:flex-start;gap:12px;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:500;color:var(--cream-soft)}
 .cw-k i{font-family:var(--serif);font-size:16px;letter-spacing:0;text-transform:none;color:var(--cream);margin-right:10px}
 .cw-k > span + span::before{content:"·";margin-right:12px}
 .cw-w{display:inline-block;padding:0 .05em .1em 0;font-family:var(--serif);font-size:var(--cw);line-height:.9;letter-spacing:-.03em;color:transparent;background-image:linear-gradient(rgba(241,239,234,var(--lift,.42)),rgba(241,239,234,var(--lift,.42))),var(--img);background-size:100% 100%,var(--bs,130%) auto;background-repeat:no-repeat;background-position:0 0,var(--p0,25% 45%);-webkit-background-clip:text;background-clip:text;filter:sepia(.18) saturate(.9) brightness(var(--br,1.08));animation:cwdrift 22s ease-in-out infinite alternate;transition:background-size 1.4s var(--ease)}
@@ -392,7 +392,7 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
 .cw-line{font-family:var(--serif);font-size:var(--t-heading);line-height:1.1}
 .cw-sub{max-width:360px;font-size:15px;line-height:1.5;color:var(--cream-soft)}
 @media (max-width:760px){
-  .ch-words{--cw:min(6vh,11vw)}
+  .ch-words{--cw:min(5vh,9.5vw)}
   .ch-words{background-position:78% 50%}
   .ch-words::before{background:linear-gradient(180deg,rgba(var(--sage-deep),.66) 0%,rgba(var(--sage-deep),.58) 50%,rgba(var(--sage-deep),.72) 100%)}
   .ch-words .wrap{justify-content:flex-start}
@@ -905,22 +905,22 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
 <main class="view" data-view="chapters" hidden>
   <section class="ch-words" data-dark>
     <div class="wrap">
-      <span class="eyebrow" data-fade data-now style="--d:200ms">The chapters</span>
+      <span class="eyebrow" data-fade data-now style="--d:200ms">The three chapters</span>
       <nav aria-label="The three chapters">
         <ol class="cw-list">
-          <li data-fade data-now style="--d:350ms"><button type="button" data-jump="0"><span class="cw-k"><span><i>i</i>Chapter I</span><span>Art · Tel Aviv</span></span><span class="cw-w" style="--img:url(img/ch-hero-gallery.jpg);--p0:20% 30%;--p1:70% 60%">The Founders’ <em>Table.</em></span></button></li>
-          <li data-fade data-now style="--d:550ms"><button type="button" data-jump="1"><span class="cw-k"><span><i>ii</i>Chapter II</span><span>Swiss watchmaking</span></span><span class="cw-w" style="--img:url(img/ch-hero-watch.jpg);--lift:.52;--p0:0% 40%;--p1:40% 60%">The Art <em>of Time.</em></span></button></li>
-          <li data-fade data-now style="--d:750ms"><button type="button" data-jump="2"><span class="cw-k"><span><i>iii</i>Chapter III</span><span>Rothschild wine</span></span><span class="cw-w" style="--img:url(img/wine-wall.jpg);--p0:30% 40%;--p1:60% 70%;--lift:.5">Behind <em>the Label.</em></span></button></li>
+          <li data-fade data-now style="--d:350ms"><button type="button" data-jump="0"><span class="cw-k"><span>Israeli art</span></span><span class="cw-w" style="--img:url(img/ch-hero-gallery.jpg);--p0:20% 30%;--p1:70% 60%">The Founders’ <em>Table.</em></span></button></li>
+          <li data-fade data-now style="--d:550ms"><button type="button" data-jump="1"><span class="cw-k"><span>Swiss watchmaking</span></span><span class="cw-w" style="--img:url(img/ch-hero-watch.jpg);--lift:.52;--p0:0% 40%;--p1:40% 60%">The Art <em>of Time.</em></span></button></li>
+          <li data-fade data-now style="--d:750ms"><button type="button" data-jump="2"><span class="cw-k"><span>Rothschild wine</span></span><span class="cw-w" style="--img:url(img/wine-wall.jpg);--p0:30% 40%;--p1:60% 70%;--lift:.5">Behind <em>the Label.</em></span></button></li>
         </ol>
       </nav>
-      <p class="cw-foot" data-fade data-now style="--d:1000ms"><span class="cw-line">Three evenings, <em>one circle.</em></span><span class="cw-sub">Each evening opens a different door into the world of Edmond de Rothschild.</span></p>
+      <p class="cw-foot" data-fade data-now style="--d:1000ms"><span class="cw-sub">Each chapter opens a different door into the world of Edmond de Rothschild.</span></p>
     </div>
   </section>
 
   <div class="frames">
   <section class="scene" data-dark>
     <span class="no">i</span>
-    <img src="img/ch-table.jpg" alt="A long dinner table laid beneath a large blue portrait" data-parallax style="object-position:50% 40%">
+    <img src="img/ch1-still-life.jpg" alt="A table draped in linen with silver candlesticks, grapes, fruit and white flowers against a sage wall" data-parallax style="object-position:50% 45%;--sep:.03;--sat:1">
     <div class="scene-copy wrap">
       <span class="eyebrow" data-fade>Chapter I · Tel Aviv</span>
       <h2 data-split>The Founders’ <em>Table.</em></h2>
@@ -940,7 +940,7 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
 
   <section class="scene" data-dark>
     <span class="no">ii</span>
-    <img src="img/ch-watchmaker.jpg" alt="A watchmaker at his bench, in an early photograph" data-parallax style="object-position:40% 50%">
+    <img src="img/ch2-watchmaker.jpg" alt="A watchmaker at his bench, in an early photograph" data-parallax style="object-position:40% 45%">
     <div class="scene-copy wrap">
       <span class="eyebrow" data-fade>Chapter II · Swiss heritage</span>
       <h2 data-split>The Art <em>of Time.</em></h2>
@@ -951,7 +951,7 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
 
   <section class="scene" data-dark>
     <span class="no">iii</span>
-    <img src="img/ch-wine.jpg" alt="A wine bar beneath olive trees, lit by lanterns" data-parallax style="object-position:50% 62%;--b:.62">
+    <img src="img/ch3-harvest.jpg" alt="Hands sorting freshly picked white grapes at harvest" data-parallax style="object-position:50% 50%">
     <div class="scene-copy wrap">
       <span class="eyebrow" data-fade>Chapter III · Rothschild wine</span>
       <h2 data-split>Behind <em>the Label.</em></h2>
@@ -960,11 +960,6 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
     </div>
   </section>
   </div>
-
-  <a class="next wrap" href="#founders">
-    <span class="eyebrow">Begin</span>
-    <h2><span>For the founders</span></h2>
-  </a>
 
   <div class="wrap"><p class="fine">A private proposal. Venues, partners and guests to be confirmed.</p></div>
 </main>
