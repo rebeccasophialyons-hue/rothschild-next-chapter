@@ -22,13 +22,13 @@
 /* Layout: cinematic sequence — full-bleed night scenes cut against ivory pages; serif type that moves with the scroll; one brass accent for numbers. Single deliberate look. */
 :root{
   --ivory:#f1efea;
-  --ink:#0a110d;
-  --ink-soft:#4a5650;
+  --ink:#13201a;
+  --ink-soft:#475a4f;
   --night:#0a110d;
   --cream:#f1efea;
   --cream-soft:rgba(241,239,234,.76);
   --brass:#8f8983;
-  --rule:rgba(10,17,13,.18);
+  --rule:rgba(19,32,26,.2);
   --rule-dark:rgba(243,241,236,.18);
   --serif:'Instrument Serif','Iowan Old Style',Georgia,'Times New Roman',serif;
   --sans:'Instrument Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
@@ -514,16 +514,16 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
 .enq-btn{border:1px solid var(--ink);border-radius:999px;padding:14px 34px;font-size:var(--t-label);letter-spacing:.14em;text-transform:uppercase;font-weight:500;transition:background .4s,color .4s}
 .enq-btn:hover{background:var(--ink);color:var(--ivory)}
 .enq-status{color:var(--ink-soft);font-size:16px;max-width:420px}
-/* enquiry: a little tighter, and every word in the House green from the page-change screen */
+/* enquiry: a little tighter, every word in the text green */
 .enquire{padding-block:clamp(64px,8vw,120px) clamp(44px,5vw,72px);gap:clamp(32px,5vw,96px)}
-.enquire .eyebrow,.enq-copy h2,.enq-copy p,.f label,.f input,.f select,.f textarea,.enq-btn,.enq-status{color:var(--night)}
+.enquire .eyebrow,.enq-copy h2,.enq-copy p,.f label,.f input,.f select,.f textarea,.enq-btn,.enq-status{color:var(--ink)}
 .enq-copy h2,.enq-copy p{margin-top:14px}
 .enq-form{row-gap:18px}
 .f label{margin-bottom:4px}
 .f input,.f select,.f textarea{padding:6px 0 8px}
 .f textarea{min-height:64px}
-.enq-btn{border-color:var(--night)}
-.enq-btn:hover{background:var(--night);color:var(--ivory)}
+.enq-btn{border-color:var(--ink)}
+.enq-btn:hover{background:var(--ink);color:var(--ivory)}
 @media (max-width:980px){.enquire .enq-form{grid-template-columns:1fr 1fr;column-gap:20px}}
 @media (max-width:980px){
   .frames{gap:10px;padding-top:10px}
