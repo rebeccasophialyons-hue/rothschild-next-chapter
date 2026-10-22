@@ -22,13 +22,13 @@
 /* Layout: cinematic sequence — full-bleed night scenes cut against ivory pages; serif type that moves with the scroll; one brass accent for numbers. Single deliberate look. */
 :root{
   --ivory:#f1efea;
-  --ink:#1c1918;
-  --ink-soft:#5a534e;
+  --ink:#0a110d;
+  --ink-soft:#4a5650;
   --night:#0a110d;
   --cream:#f1efea;
   --cream-soft:rgba(241,239,234,.76);
   --brass:#8f8983;
-  --rule:rgba(28,25,24,.18);
+  --rule:rgba(10,17,13,.18);
   --rule-dark:rgba(243,241,236,.18);
   --serif:'Instrument Serif','Iowan Old Style',Georgia,'Times New Roman',serif;
   --sans:'Instrument Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
@@ -343,12 +343,12 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
 /* concept and chapters: the cover's full-bleed opening, then framed scenes as on the founders page */
 .p-hero .hero-copy .txt{max-width:640px}
 .scene p.host{margin-top:22px;padding-top:14px;border-top:1px solid var(--rule-dark);font-size:var(--t-label);letter-spacing:.14em;text-transform:uppercase;font-weight:500;line-height:1.5;color:var(--cream-soft)}
-/* chapters: what the evening is, then the thinking behind it */
-.ch-cols{display:grid;grid-template-columns:repeat(2,minmax(0,440px));gap:clamp(28px,4vw,64px);margin-top:28px}
-.scene .ch-col .eyebrow{margin-bottom:0;padding-bottom:10px;border-bottom:1px solid var(--rule-dark)}
-.scene .ch-col p{margin-top:14px;max-width:none}
-.ch-cols + .host{max-width:calc(880px + clamp(28px,4vw,64px))}
-@media (max-width:760px){.ch-cols{grid-template-columns:1fr;gap:26px;margin-top:22px}}
+/* chapters: the evening and the thinking, as two dropdowns */
+.ch-acc{max-width:620px;margin-top:26px}
+.ch-acc .o-btn{padding:16px 0}
+.ch-acc .o-t{font-size:clamp(20px,1.6vw,24px)}
+.scene .ch-acc .o-lead{margin-top:0;max-width:560px;padding-bottom:18px;font-size:16px}
+.scene .ch-acc + p.host{max-width:620px;margin-top:18px;padding-top:0;border-top:0}
 .pt-dark{border-top:1px solid rgba(241,239,234,.4)}
 .pt{padding:22px 0;border-bottom:1px solid rgba(241,239,234,.2)}
 .pt .eyebrow{margin-bottom:8px}
@@ -609,7 +609,7 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
   <section class="choose">
     <nav class="doors" aria-label="The three pages">
       <a class="door" href="#founders" style="--i:0"><div class="ph"><img src="img/door-founders.jpg" alt=""></div><span class="no">i</span><span class="name"><span>For the founders</span></span></a>
-      <a class="door" href="#concept" style="--i:1"><div class="ph"><img src="img/c-cypress.jpg" alt=""></div><span class="no">ii</span><span class="name"><span>The concept</span></span></a>
+      <a class="door" href="#concept" style="--i:1"><div class="ph"><img src="img/door-concept-drive.jpg" alt="" style="object-position:50% 42%"></div><span class="no">ii</span><span class="name"><span>The concept</span></span></a>
       <a class="door" href="#chapters" style="--i:2"><div class="ph"><img src="img/door-chapters.jpg" alt=""></div><span class="no">iii</span><span class="name"><span>The chapters</span></span></a>
     </nav>
     <p class="landing-foot">A private proposal. Venues, partners and guests to be confirmed.</p>
@@ -962,14 +962,14 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
     <div class="scene-copy wrap">
       <span class="eyebrow" data-fade>Chapter I · Tel Aviv</span>
       <h2 data-split>The Founders’ <em>Table.</em></h2>
-      <div class="ch-cols">
-        <div class="ch-col" data-fade>
-          <span class="eyebrow">The evening</span>
-          <p>After hours, the gallery at the Edmond de Rothschild Center opens for one table. Three emerging Israeli artists show the work they are becoming known for and talk about it with guests, among the pieces themselves. Dinner is served in the exhibition.</p>
+      <div class="offer offer-dark ch-acc" data-fade>
+        <div class="o-item">
+          <button class="o-btn" type="button" aria-expanded="false"><span class="o-t">The evening</span><span class="o-pm" aria-hidden="true"></span></button>
+          <div class="o-body"><div><p class="o-lead">After hours, the gallery at the Edmond de Rothschild Center opens for one table. Three emerging Israeli artists show the work they are becoming known for and talk about it with guests, among the pieces themselves. Dinner is served in the exhibition.</p></div></div>
         </div>
-        <div class="ch-col" data-fade>
-          <span class="eyebrow">The thinking</span>
-          <p>Our story in Israel began by backing people who were building something from nothing. These artists are doing that now, taking Israeli heritage and remaking it for their generation. So are the founders at the table. Edmond de Rothschild hosts the most interesting table in Tel Aviv.</p>
+        <div class="o-item">
+          <button class="o-btn" type="button" aria-expanded="false"><span class="o-t">The thinking</span><span class="o-pm" aria-hidden="true"></span></button>
+          <div class="o-body"><div><p class="o-lead">Our story in Israel began by backing people who were building something from nothing. These artists are doing that now, taking Israeli heritage and remaking it for their generation. So are the founders at the table. Edmond de Rothschild hosts the most interesting table in Tel Aviv.</p></div></div>
         </div>
       </div>
       <p class="host" data-fade>Hosted in the gallery at the Edmond de Rothschild Center, Tel Aviv · 10 to 15 guests</p>
@@ -982,14 +982,14 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
     <div class="scene-copy wrap">
       <span class="eyebrow" data-fade>Chapter II · Swiss heritage</span>
       <h2 data-split>The Art <em>of Time.</em></h2>
-      <div class="ch-cols">
-        <div class="ch-col" data-fade>
-          <span class="eyebrow">The evening</span>
-          <p>A private salon with a Swiss watch specialist and a serious collector. Movements are opened on the table and passed around. Guests learn the codes that separate a fine watch from an expensive one, and what makes a piece worth keeping for a lifetime.</p>
+      <div class="offer offer-dark ch-acc" data-fade>
+        <div class="o-item">
+          <button class="o-btn" type="button" aria-expanded="false"><span class="o-t">The evening</span><span class="o-pm" aria-hidden="true"></span></button>
+          <div class="o-body"><div><p class="o-lead">A private salon with a Swiss watch specialist and a serious collector. Movements are opened on the table and passed around. Guests learn the codes that separate a fine watch from an expensive one, and what makes a piece worth keeping for a lifetime.</p></div></div>
         </div>
-        <div class="ch-col" data-fade>
-          <span class="eyebrow">The thinking</span>
-          <p>Edmond de Rothschild is a Geneva house. Swiss precision is how we think: patient, exact and built to outlast its owner. A fine watch is the most personal form that thinking takes, and the one most founders already wear.</p>
+        <div class="o-item">
+          <button class="o-btn" type="button" aria-expanded="false"><span class="o-t">The thinking</span><span class="o-pm" aria-hidden="true"></span></button>
+          <div class="o-body"><div><p class="o-lead">Edmond de Rothschild is a Geneva house. Swiss precision is how we think: patient, exact and built to outlast its owner. A fine watch is the most personal form that thinking takes, and the one most founders already wear.</p></div></div>
         </div>
       </div>
       <p class="host" data-fade>Hosted in a private salon, Tel Aviv or Jaffa</p>
@@ -1002,14 +1002,14 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
     <div class="scene-copy wrap">
       <span class="eyebrow" data-fade>Chapter III · Rothschild wine</span>
       <h2 data-split>Behind <em>the Label.</em></h2>
-      <div class="ch-cols">
-        <div class="ch-col" data-fade>
-          <span class="eyebrow">The evening</span>
-          <p>A private tasting through the Edmond de Rothschild estates, from Château Clarke in Bordeaux to the rest of the family portfolio. Guests taste the way winemakers do, and leave knowing what they like and why.</p>
+      <div class="offer offer-dark ch-acc" data-fade>
+        <div class="o-item">
+          <button class="o-btn" type="button" aria-expanded="false"><span class="o-t">The evening</span><span class="o-pm" aria-hidden="true"></span></button>
+          <div class="o-body"><div><p class="o-lead">A private tasting through the Edmond de Rothschild estates, from Château Clarke in Bordeaux to the rest of the family portfolio. Guests taste the way winemakers do, and leave knowing what they like and why.</p></div></div>
         </div>
-        <div class="ch-col" data-fade>
-          <span class="eyebrow">The thinking</span>
-          <p>Wine is where the family signs its name on the bottle. Every estate is a long bet on land, patience and time, which is how we think about wealth. This is the evening guests taste our heritage directly.</p>
+        <div class="o-item">
+          <button class="o-btn" type="button" aria-expanded="false"><span class="o-t">The thinking</span><span class="o-pm" aria-hidden="true"></span></button>
+          <div class="o-body"><div><p class="o-lead">Wine is where the family signs its name on the bottle. Every estate is a long bet on land, patience and time, which is how we think about wealth. This is the evening guests taste our heritage directly.</p></div></div>
         </div>
       </div>
       <p class="host" data-fade>Hosted as a private tasting in Israel</p>
